@@ -1,16 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import RFHeader from '@/components/regiflex/RFHeader';
+import RFHero from '@/components/regiflex/RFHero';
+import RFAbout from '@/components/regiflex/RFAbout';
+import RFProduct from '@/components/regiflex/RFProduct';
+import RFFeatures from '@/components/regiflex/RFFeatures';
+import RFDifferentials from '@/components/regiflex/RFDifferentials';
+import RFCTA from '@/components/regiflex/RFCTA';
+import RFTeam from '@/components/regiflex/RFTeam';
+import RFContact from '@/components/regiflex/RFContact';
+import RFFooter from '@/components/regiflex/RFFooter';
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen">
+      <RFHeader />
+      <RFHero />
+      <RFAbout />
+      <RFProduct />
+      <RFFeatures />
+      <RFDifferentials />
+      <RFCTA />
+      <RFTeam />
+      <RFContact />
+      <RFFooter />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
