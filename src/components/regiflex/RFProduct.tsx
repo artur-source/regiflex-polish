@@ -38,7 +38,7 @@ export default function RFProduct() {
             A Solução <span className="text-gradient-green">RegiFlex</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Plataforma digital que otimiza o cadastro de pacientes e organiza o fluxo de atendimento, reduzindo filas e melhorando a gestão.
+            RegiFlex é uma plataforma digital que permite otimizar o cadastro de pacientes e organizar o fluxo de atendimento em clínicas, reduzindo filas e melhorando a gestão da recepção.
           </p>
         </motion.div>
 

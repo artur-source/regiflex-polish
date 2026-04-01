@@ -32,9 +32,8 @@ export default function RFHero() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-primary-foreground mb-6">
-              Tecnologia que{' '}
-              <span className="text-rf-yellow">otimiza</span> o atendimento
-              clínico
+              RegiFlex — Tecnologia para{' '}
+              <span className="text-rf-yellow">otimizar</span> o atendimento em clínicas.
             </h1>
 
             <p className="text-lg sm:text-xl text-primary-foreground/70 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">

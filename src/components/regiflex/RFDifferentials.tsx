@@ -10,11 +10,11 @@ const fadeUp = {
 };
 
 const differentials = [
-  { icon: Zap, title: 'Redução do tempo de cadastro', color: 'text-rf-yellow bg-rf-yellow/10' },
-  { icon: BarChart3, title: 'Fila de atendimento organizada', color: 'text-rf-blue bg-rf-blue/10' },
+  { icon: Zap, title: 'Redução do tempo de cadastro de pacientes', color: 'text-rf-yellow bg-rf-yellow/10' },
+  { icon: BarChart3, title: 'Organização eficiente da fila de atendimento', color: 'text-rf-blue bg-rf-blue/10' },
   { icon: Palette, title: 'Interface simples e intuitiva', color: 'text-rf-green bg-rf-green/10' },
-  { icon: Building2, title: 'Múltiplas clínicas', color: 'text-rf-blue bg-rf-blue/10' },
-  { icon: Code2, title: 'Arquitetura web moderna', color: 'text-rf-green bg-rf-green/10' },
+  { icon: Building2, title: 'Sistema preparado para múltiplas clínicas', color: 'text-rf-blue bg-rf-blue/10' },
+  { icon: Code2, title: 'Arquitetura moderna baseada em tecnologia web', color: 'text-rf-green bg-rf-green/10' },
 ];
 
 const advantages = [
@@ -44,7 +44,7 @@ export default function RFDifferentials() {
         >
           <span className="text-sm font-semibold text-accent uppercase tracking-widest">Diferenciais</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
-            Por que <span className="text-gradient-green">RegiFlex</span>?
+            Diferenciais da <span className="text-gradient-green">Solução</span>
           </h2>
         </motion.div>
 

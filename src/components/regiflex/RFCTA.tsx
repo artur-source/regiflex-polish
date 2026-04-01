@@ -20,11 +20,11 @@ export default function RFCTA() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground mb-6 tracking-tight">
-            Pronto para modernizar{' '}
-            <span className="text-rf-yellow">sua clínica?</span>
+            Modernize o atendimento{' '}
+            <span className="text-rf-yellow">da sua clínica.</span>
           </h2>
           <p className="text-lg text-primary-foreground/70 max-w-xl mx-auto mb-8">
-            Solicite uma demonstração gratuita e descubra como o RegiFlex pode transformar seu atendimento.
+            Conheça como o RegiFlex pode tornar o processo de cadastro e atendimento mais rápido e organizado.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button

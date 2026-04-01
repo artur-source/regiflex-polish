@@ -26,7 +26,7 @@ export default function RFTeam() {
         >
           <span className="text-sm font-semibold text-accent uppercase tracking-widest">Equipe</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
-            Quem está <span className="text-gradient-blue">por trás</span>
+            Organograma da <span className="text-gradient-blue">Equipe</span>
           </h2>
         </motion.div>
 

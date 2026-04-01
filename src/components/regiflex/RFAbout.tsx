@@ -28,8 +28,7 @@ export default function RFAbout() {
             Quem é a <span className="text-gradient-blue">RegiFlex</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Uma iniciativa para modernizar o cadastro e atendimento em clínicas, reduzindo filas e
-            proporcionando eficiência para pacientes e profissionais da saúde.
+            O RegiFlex é uma iniciativa desenvolvida para modernizar o processo de cadastro e atendimento em clínicas, utilizando tecnologia para reduzir filas, melhorar a organização da recepção e proporcionar uma experiência mais eficiente para pacientes e profissionais da saúde.
           </p>
         </motion.div>
 
@@ -94,7 +93,7 @@ export default function RFAbout() {
             {
               icon: Eye,
               title: 'Visão',
-              text: 'Tornar-se referência em organização e eficiência no atendimento clínico.',
+              text: 'Tornar-se uma plataforma reconhecida por melhorar a organização e eficiência no atendimento de clínicas e consultórios.',
               gradient: 'from-rf-green/10 to-rf-green/5',
               iconColor: 'text-rf-green',
             },

@@ -9,11 +9,11 @@ const fadeUp = {
 };
 
 const steps = [
-  { num: '01', title: 'Cadastro Digital', desc: 'Paciente realiza o cadastro pela plataforma digital de forma rápida.' },
-  { num: '02', title: 'QR Code Gerado', desc: 'O sistema gera automaticamente um QR Code com os dados do paciente.' },
-  { num: '03', title: 'Leitura pela Clínica', desc: 'A clínica lê o QR Code e registra o paciente instantaneamente.' },
-  { num: '04', title: 'Fila Organizada', desc: 'Paciente é adicionado à fila de atendimento automaticamente.' },
-  { num: '05', title: 'Atendimento', desc: 'O profissional de saúde realiza o atendimento com todos os dados.' },
+  { num: '01', title: 'Cadastro Digital', desc: 'Paciente realiza cadastro digital.' },
+  { num: '02', title: 'QR Code Gerado', desc: 'Sistema gera QR Code com informações do paciente.' },
+  { num: '03', title: 'Leitura pela Clínica', desc: 'A clínica lê o QR Code e registra rapidamente o paciente.' },
+  { num: '04', title: 'Fila de Atendimento', desc: 'O paciente entra na fila de atendimento.' },
+  { num: '05', title: 'Atendimento', desc: 'Profissional realiza o atendimento.' },
 ];
 
 export default function RFFeatures() {
