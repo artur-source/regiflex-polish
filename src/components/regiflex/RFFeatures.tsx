@@ -9,11 +9,11 @@ const fadeUp = {
 };
 
 const steps = [
-  { num: '01', title: 'Cadastro Digital', desc: 'Paciente realiza cadastro digital.' },
-  { num: '02', title: 'QR Code Gerado', desc: 'Sistema gera QR Code com informações do paciente.' },
-  { num: '03', title: 'Leitura pela Clínica', desc: 'A clínica lê o QR Code e registra rapidamente o paciente.' },
-  { num: '04', title: 'Fila de Atendimento', desc: 'O paciente entra na fila de atendimento.' },
-  { num: '05', title: 'Atendimento', desc: 'Profissional realiza o atendimento.' },
+  { num: '01', title: 'Chegada à Clínica', desc: 'O paciente chega à clínica e encontra um QR Code disponível na recepção.' },
+  { num: '02', title: 'Escaneamento do QR Code', desc: 'O paciente utiliza o celular para escanear o QR Code da clínica.' },
+  { num: '03', title: 'Cadastro Digital', desc: 'O paciente preenche seus dados diretamente no formulário digital do sistema RegiFlex.' },
+  { num: '04', title: 'Registro no Sistema', desc: 'As informações são enviadas automaticamente para o sistema da clínica.' },
+  { num: '05', title: 'Entrada na Fila', desc: 'O paciente é registrado na fila de atendimento e aguarda ser chamado pelo profissional.' },
 ];
 
 export default function RFFeatures() {
