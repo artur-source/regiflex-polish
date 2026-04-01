@@ -9,33 +9,29 @@ const fadeUp = {
 };
 
 const steps = [
-  { num: '01', title: 'Chegada à Clínica', desc: 'O paciente chega à clínica e encontra um QR Code disponível na recepção.' },
-  { num: '02', title: 'Escaneamento do QR Code', desc: 'O paciente utiliza o celular para escanear o QR Code da clínica.' },
-  { num: '03', title: 'Cadastro Digital', desc: 'O paciente preenche seus dados diretamente no formulário digital do sistema RegiFlex.' },
-  { num: '04', title: 'Registro no Sistema', desc: 'As informações são enviadas automaticamente para o sistema da clínica.' },
-  { num: '05', title: 'Entrada na Fila', desc: 'O paciente é registrado na fila de atendimento e aguarda ser chamado pelo profissional.' },
+  { num: '01', title: 'Chegada à clínica', desc: 'O paciente chega à clínica e encontra o QR Code do RegiFlex disponível na recepção.' },
+  { num: '02', title: 'Acesso ao cadastro', desc: 'O paciente escaneia o QR Code com o celular e acessa o formulário digital.' },
+  { num: '03', title: 'Preenchimento dos dados', desc: 'O paciente preenche suas informações diretamente no sistema.' },
+  { num: '04', title: 'Registro automático', desc: 'O sistema envia os dados para a clínica e registra o paciente.' },
+  { num: '05', title: 'Entrada na fila', desc: 'O paciente é incluído na fila de atendimento e aguarda ser chamado.' },
 ];
 
 export default function RFFeatures() {
   return (
-    <section id="funcionalidades" className="section-padding bg-background">
+    <section id="como-funciona" className="section-padding bg-secondary">
       <div className="container-narrow mx-auto">
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
           variants={fadeUp} custom={0}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-sm font-semibold text-accent uppercase tracking-widest">Como funciona</span>
+          <span className="text-sm font-semibold text-primary uppercase tracking-widest">Como funciona</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
-            Fluxo <span className="text-gradient-blue">simplificado</span>
+            Fluxo do sistema
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Do cadastro ao atendimento, em 5 passos simples.
-          </p>
         </motion.div>
 
         <div className="relative">
-          {/* Connection line */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
 
           <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-1 lg:gap-0">
@@ -48,15 +44,14 @@ export default function RFFeatures() {
               >
                 <div className={`lg:w-1/2 ${i % 2 === 0 ? 'lg:text-right lg:pr-12' : 'lg:text-left lg:pl-12'}`}>
                   <div className={`p-6 rounded-2xl bg-card border border-border/50 shadow-sm hover-lift inline-block text-left ${i % 2 === 0 ? 'lg:ml-auto' : ''}`}>
-                    <span className="text-xs font-bold text-rf-blue tracking-wider">PASSO {step.num}</span>
+                    <span className="text-xs font-bold text-primary tracking-wider">PASSO {step.num}</span>
                     <h3 className="text-lg font-bold text-foreground mt-1 mb-2">{step.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
 
-                {/* Center dot */}
                 <div className="hidden lg:flex w-0 items-center justify-center relative">
-                  <div className="w-4 h-4 rounded-full bg-rf-blue border-4 border-background shadow-md absolute" />
+                  <div className="w-4 h-4 rounded-full bg-primary border-4 border-background shadow-md absolute" />
                 </div>
 
                 <div className="lg:w-1/2" />

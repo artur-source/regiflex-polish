@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Produto', href: '#produto' },
+  { label: 'Solução', href: '#solucao' },
+  { label: 'Como funciona', href: '#como-funciona' },
   { label: 'Funcionalidades', href: '#funcionalidades' },
   { label: 'Diferenciais', href: '#diferenciais' },
+  { label: 'Sobre', href: '#sobre' },
   { label: 'Equipe', href: '#equipe' },
   { label: 'Contato', href: '#contato' },
 ];
@@ -22,15 +23,14 @@ export default function RFHeader() {
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-card/90 backdrop-blur-xl shadow-sm border-b border-border/50'
+          ? 'bg-background/90 backdrop-blur-xl shadow-sm border-b border-border/50'
           : 'bg-transparent'
       }`}
     >
@@ -42,7 +42,6 @@ export default function RFHeader() {
           </span>
         </button>
 
-        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <button
@@ -59,13 +58,12 @@ export default function RFHeader() {
           ))}
           <button
             onClick={() => scrollTo('#contato')}
-            className="ml-3 px-5 py-2.5 bg-accent text-accent-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="ml-3 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             Demonstração
           </button>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={`lg:hidden p-2 rounded-lg ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}
@@ -75,9 +73,8 @@ export default function RFHeader() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
-        <div className="lg:hidden bg-card/95 backdrop-blur-xl border-b border-border animate-fade-up">
+        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border">
           <nav className="container-narrow mx-auto px-4 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <button
@@ -90,7 +87,7 @@ export default function RFHeader() {
             ))}
             <button
               onClick={() => scrollTo('#contato')}
-              className="mt-2 px-4 py-3 bg-accent text-accent-foreground rounded-lg text-sm font-semibold text-center"
+              className="mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold text-center"
             >
               Solicitar Demonstração
             </button>
