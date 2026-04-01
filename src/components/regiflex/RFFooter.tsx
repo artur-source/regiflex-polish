@@ -96,6 +96,20 @@ export default function RFFooter() {
             <span>WCAG 2.1</span>
           </div>
         </div>
+
+        <div className="border-t border-primary-foreground/10 mt-6 pt-6 text-center">
+          <p className="text-xs text-primary-foreground/50">
+            Feito por{' '}
+            <a
+              href="https://core-patch-website.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors font-semibold"
+            >
+              Core & Patch
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
