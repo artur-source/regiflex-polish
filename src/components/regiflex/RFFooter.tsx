@@ -45,21 +45,37 @@ export default function RFFooter() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-6 text-center space-y-2">
-          <p className="text-xs text-primary-foreground/40">
-            © {year} RegiFlex — Todos os direitos reservados.
-          </p>
-          <p className="text-xs text-primary-foreground/50">
-            Feito por{' '}
-            <a
-              href="https://core-patch-website.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors font-semibold"
-            >
-              Core & Patch
+        <div className="border-t border-primary-foreground/10 pt-8">
+          <div className="flex flex-wrap justify-center gap-6 mb-6">
+            <a href="#privacy" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Privacy
             </a>
-          </p>
+            <a href="#terms" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Terms
+            </a>
+            <a href="#faq" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              FAQ
+            </a>
+            <a href="#contato" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Contato
+            </a>
+          </div>
+          <div className="text-center space-y-2">
+            <p className="text-xs text-primary-foreground/40">
+              © {year} RegiFlex — Todos os direitos reservados.
+            </p>
+            <p className="text-xs text-primary-foreground/50">
+              Feito por{' '}
+              <a
+                href="https://core-patch-website.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/70 hover:text-primary-foreground transition-colors font-semibold"
+              >
+                Core & Patch
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

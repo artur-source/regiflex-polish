@@ -1,15 +1,12 @@
 import RFHeader from '@/components/regiflex/RFHeader';
 import RFHero from '@/components/regiflex/RFHero';
-import RFProblem from '@/components/regiflex/RFProblem';
-import RFSolution from '@/components/regiflex/RFSolution';
-import RFFeatures from '@/components/regiflex/RFFeatures';
+import RFExplanatory from '@/components/regiflex/RFExplanatory';
+import RFAbout from '@/components/regiflex/RFAbout';
+import RFOrganogram from '@/components/regiflex/RFOrganogram';
 import RFProduct from '@/components/regiflex/RFProduct';
 import RFDifferentials from '@/components/regiflex/RFDifferentials';
 import RFAudience from '@/components/regiflex/RFAudience';
-import RFPlatforms from '@/components/regiflex/RFPlatforms';
-import RFMascot from '@/components/regiflex/RFMascot';
-import RFAbout from '@/components/regiflex/RFAbout';
-import RFTeam from '@/components/regiflex/RFTeam';
+import RFFeatures from '@/components/regiflex/RFFeatures';
 import RFCTA from '@/components/regiflex/RFCTA';
 import RFContact from '@/components/regiflex/RFContact';
 import RFFooter from '@/components/regiflex/RFFooter';
@@ -19,16 +16,13 @@ const Index = () => {
     <div className="min-h-screen">
       <RFHeader />
       <RFHero />
-      <RFProblem />
-      <RFSolution />
-      <RFFeatures />
+      <RFExplanatory />
+      <RFAbout />
+      <RFOrganogram />
       <RFProduct />
       <RFDifferentials />
       <RFAudience />
-      <RFPlatforms />
-      <RFMascot />
-      <RFAbout />
-      <RFTeam />
+      <RFFeatures />
       <RFCTA />
       <RFContact />
       <RFFooter />

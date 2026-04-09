@@ -23,9 +23,17 @@ export default function RFAbout() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-6 tracking-tight">
             Quem somos
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            O RegiFlex é um projeto desenvolvido com o objetivo de aplicar tecnologia na melhoria do atendimento em clínicas. A iniciativa busca modernizar processos administrativos e tornar o cadastro de pacientes mais eficiente.
-          </p>
+          <div className="text-muted-foreground text-lg leading-relaxed space-y-4">
+            <p>
+              <strong className="text-foreground">Origem do Projeto:</strong> O RegiFlex nasceu da necessidade de resolver um problema real nas clínicas: o caos no gerenciamento de filas e cadastro de pacientes.
+            </p>
+            <p>
+              <strong className="text-foreground">Propósito da Solução:</strong> Transformar o fluxo de atendimento clínico através de tecnologia simples, acessível e intuitiva que moderniza a recepção.
+            </p>
+            <p>
+              <strong className="text-foreground">Contexto do Problema:</strong> Muitas clínicas ainda utilizam processos manuais, gerando filas, retrabalho e atrasos. O RegiFlex foi desenvolvido para transformar esse processo.
+            </p>
+          </div>
         </motion.div>
 
         {/* Missão, Visão, Valores */}
@@ -44,17 +52,17 @@ export default function RFAbout() {
             {
               icon: Target,
               title: 'Missão',
-              text: 'Simplificar e modernizar o processo de atendimento em clínicas por meio da tecnologia.',
+              text: 'Melhorar o fluxo de atendimento em clínicas através de tecnologia simples e acessível.',
             },
             {
               icon: Eye,
               title: 'Visão',
-              text: 'Ser uma plataforma reconhecida por melhorar a organização e eficiência no atendimento de clínicas.',
+              text: 'Tornar-se referência em soluções digitais de gestão de atendimento em saúde.',
             },
             {
               icon: Heart,
               title: 'Valores',
-              text: 'Inovação, Eficiência, Simplicidade, Tecnologia acessível, Experiência do usuário.',
+              text: 'Eficiência, Simplicidade, Confiabilidade e Inovação.',
             },
           ].map((item, i) => (
             <motion.div

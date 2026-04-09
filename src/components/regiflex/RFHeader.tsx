@@ -58,9 +58,19 @@ export default function RFHeader() {
           ))}
           <button
             onClick={() => scrollTo('#contato')}
-            className="ml-3 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+            className={`ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+              scrolled
+                ? 'text-foreground hover:bg-muted'
+                : 'text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10'
+            }`}
           >
-            Demonstração
+            Login
+          </button>
+          <button
+            onClick={() => scrollTo('#contato')}
+            className="ml-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+          >
+            Começar
           </button>
         </nav>
 
@@ -87,9 +97,15 @@ export default function RFHeader() {
             ))}
             <button
               onClick={() => scrollTo('#contato')}
+              className="mt-2 px-4 py-3 text-foreground hover:bg-muted rounded-lg text-sm font-semibold text-center transition-colors"
+            >
+              Login
+            </button>
+            <button
+              onClick={() => scrollTo('#contato')}
               className="mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold text-center"
             >
-              Solicitar Demonstração
+              Começar
             </button>
           </nav>
         </div>
