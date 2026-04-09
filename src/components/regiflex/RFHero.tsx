@@ -30,13 +30,13 @@ export default function RFHero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button
-                onClick={() => scrollTo('#contato')}
+              <a
+                href="https://appregiflex.com.br/register"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-primary-foreground text-primary font-bold rounded-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
               >
                 Criar Conta
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
               <button
                 onClick={() => scrollTo('#como-funciona')}
                 className="group inline-flex items-center justify-center gap-2 px-7 py-4 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-xl hover:bg-primary-foreground/10 transition-all duration-300"

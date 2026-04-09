@@ -47,16 +47,16 @@ export default function RFFooter() {
 
         <div className="border-t border-primary-foreground/10 pt-8">
           <div className="flex flex-wrap justify-center gap-6 mb-6">
-            <a href="#privacy" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+            <a href="https://appregiflex.com.br/privacy" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
               Privacy
             </a>
-            <a href="#terms" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+            <a href="https://appregiflex.com.br/terms" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
               Terms
             </a>
-            <a href="#faq" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+            <a href="https://appregiflex.com.br/faq" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
               FAQ
             </a>
-            <a href="#contato" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+            <a href="https://appregiflex.com.br/contact" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
               Contato
             </a>
           </div>

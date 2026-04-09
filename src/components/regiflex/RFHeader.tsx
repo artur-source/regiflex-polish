@@ -56,8 +56,8 @@ export default function RFHeader() {
               {link.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollTo('#contato')}
+          <a
+            href="https://appregiflex.com.br/login"
             className={`ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
               scrolled
                 ? 'text-foreground hover:bg-muted'
@@ -65,13 +65,13 @@ export default function RFHeader() {
             }`}
           >
             Login
-          </button>
-          <button
-            onClick={() => scrollTo('#contato')}
+          </a>
+          <a
+            href="https://appregiflex.com.br/splash"
             className="ml-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             Começar
-          </button>
+          </a>
         </nav>
 
         <button
@@ -95,18 +95,18 @@ export default function RFHeader() {
                 {link.label}
               </button>
             ))}
-            <button
-              onClick={() => scrollTo('#contato')}
+            <a
+              href="https://appregiflex.com.br/login"
               className="mt-2 px-4 py-3 text-foreground hover:bg-muted rounded-lg text-sm font-semibold text-center transition-colors"
             >
               Login
-            </button>
-            <button
-              onClick={() => scrollTo('#contato')}
+            </a>
+            <a
+              href="https://appregiflex.com.br/splash"
               className="mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold text-center"
             >
               Começar
-            </button>
+            </a>
           </nav>
         </div>
       )}

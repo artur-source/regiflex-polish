@@ -2,9 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 export default function RFCTA() {
-  const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const mailtoLink = "mailto:regiflex.contato@gmail.com?subject=Solicitação%20de%20Demonstração%20—%20RegiFlex&body=Olá%2C%0A%0AGostaria%20de%20solicitar%20uma%20demonstração%20da%20plataforma%20RegiFlex%20para%20conhecer%20melhor%20a%20solução%20de%20gestão%20de%20filas%20para%20clínicas.%0A%0ANome%3A%20%0AClínica%3A%20%0ACidade%3A%20%0A%0AAguardo%20retorno.";
 
   return (
     <section className="section-padding gradient-hero relative overflow-hidden">
@@ -26,19 +24,19 @@ export default function RFCTA() {
             Descubra como o RegiFlex pode transformar a recepção da sua clínica em um processo rápido, organizado e digital.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => scrollTo('#contato')}
+            <a
+              href={mailtoLink}
               className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-foreground text-primary font-bold rounded-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
             >
               Solicitar demonstração
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button
-              onClick={() => scrollTo('#contato')}
+            </a>
+            <a
+              href="https://appregiflex.com.br/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-xl hover:bg-primary-foreground/10 transition-all duration-300"
             >
               Entrar em contato
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
