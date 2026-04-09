@@ -31,7 +31,7 @@ export default function RFHero() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="https://appregiflex.com.br/register"
+                href="https://appregiflex.com.br/signup"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-primary-foreground text-primary font-bold rounded-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
               >
                 Criar Conta
