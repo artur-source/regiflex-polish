@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Instagram, Send, CheckCircle } from 'lucide-react';
+import { Mail, Instagram } from 'lucide-react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -11,18 +10,6 @@ const fadeUp = {
 };
 
 export default function RFContact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 4000);
-  };
-
   return (
     <section id="contato" className="section-padding bg-background">
       <div className="container-narrow mx-auto">
@@ -36,91 +23,32 @@ export default function RFContact() {
             Fale conosco
           </h2>
           <p className="text-muted-foreground text-lg">
-            Solicite uma demonstração ou tire suas dúvidas.
+            Estamos à disposição para tirar suas dúvidas ou agendar uma demonstração.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8">
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={fadeUp} custom={1}
-            className="lg:col-span-3"
-          >
-            <div className="p-8 rounded-2xl bg-card border border-border/50">
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <CheckCircle className="text-primary" size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">Mensagem enviada!</h3>
-                  <p className="text-muted-foreground text-sm">Responderemos em breve.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">Nome</label>
-                    <input
-                      id="name" type="text" required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground/60 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
-                      placeholder="Seu nome completo"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">Email</label>
-                    <input
-                      id="email" type="email" required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground/60 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
-                      placeholder="seu@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">Mensagem</label>
-                    <textarea
-                      id="message" required rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground/60 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all resize-none"
-                      placeholder="Como podemos ajudar?"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-semibold rounded-xl hover:opacity-90 transition-opacity"
-                  >
-                    <Send size={16} />
-                    Enviar Mensagem
-                  </button>
-                </form>
-              )}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={fadeUp} custom={2}
-            className="lg:col-span-2 space-y-4"
-          >
-            {[
-              { icon: Mail, title: 'Email', value: 'regiflex.contato@gmail.com', href: 'mailto:regiflex.contato@gmail.com' },
-              { icon: Instagram, title: 'Instagram', value: '@regiflex.app', href: 'https://www.instagram.com/regiflex.app' },
-            ].map((info) => (
-              <div key={info.title} className="p-6 rounded-2xl bg-card border border-border/50 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <info.icon className="text-primary" size={18} />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-foreground">{info.title}</h4>
-                  <a href={info.href} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
-                    {info.value}
-                  </a>
-                </div>
+        <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-3xl mx-auto">
+          {[
+            { icon: Mail, title: 'Email', value: 'regiflex.contato@gmail.com', href: 'mailto:regiflex.contato@gmail.com' },
+            { icon: Instagram, title: 'Instagram', value: '@regiflex.app', href: 'https://www.instagram.com/regiflex.app' },
+          ].map((info, i) => (
+            <motion.div 
+              key={info.title}
+              initial="hidden" whileInView="visible" viewport={{ once: true }}
+              variants={fadeUp} custom={i + 1}
+              className="flex-1 p-8 rounded-2xl bg-card border border-border/50 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-shadow"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                <info.icon className="text-primary" size={24} />
               </div>
-            ))}
-          </motion.div>
+              <div>
+                <h4 className="text-lg font-bold text-foreground mb-1">{info.title}</h4>
+                <a href={info.href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">
+                  {info.value}
+                </a>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

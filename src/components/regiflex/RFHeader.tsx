@@ -67,7 +67,7 @@ export default function RFHeader() {
             Login
           </a>
           <a
-            href="https://appregiflex.com.br/splash"
+            href="https://appregiflex.com.br/pricing"
             className="ml-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             Começar
@@ -102,7 +102,7 @@ export default function RFHeader() {
               Login
             </a>
             <a
-              href="https://appregiflex.com.br/splash"
+              href="https://appregiflex.com.br/pricing"
               className="mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold text-center"
             >
               Começar
