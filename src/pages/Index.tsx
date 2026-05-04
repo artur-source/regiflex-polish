@@ -1,9 +1,11 @@
 import RFHeader from '@/components/regiflex/RFHeader';
 import RFHero from '@/components/regiflex/RFHero';
 import RFExplanatory from '@/components/regiflex/RFExplanatory';
+import RFBenefits from '@/components/regiflex/RFBenefits';
 import RFAbout from '@/components/regiflex/RFAbout';
-import RFOrganogram from '@/components/regiflex/RFOrganogram';
-import RFProduct from '@/components/regiflex/RFProduct';
+import RFMissionVisionValues from '@/components/regiflex/RFMissionVisionValues';
+import RFTeam from '@/components/regiflex/RFTeam';
+import RFDemo from '@/components/regiflex/RFDemo';
 import RFDifferentials from '@/components/regiflex/RFDifferentials';
 import RFAudience from '@/components/regiflex/RFAudience';
 import RFFeatures from '@/components/regiflex/RFFeatures';
@@ -17,12 +19,15 @@ const Index = () => {
       <RFHeader />
       <RFHero />
       <RFExplanatory />
+      <RFBenefits />
+      {/* <RFProduct /> - Removido conforme nova estrutura */}
       <RFAbout />
-      <RFOrganogram />
-      <RFProduct />
+      <RFMissionVisionValues />
+      <RFTeam />
+      <RFDemo />
+      <RFFeatures />
       <RFDifferentials />
       <RFAudience />
-      <RFFeatures />
       <RFCTA />
       <RFContact />
       <RFFooter />

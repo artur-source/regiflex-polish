@@ -1,63 +1,54 @@
 import { motion } from 'framer-motion';
+import { ClipboardList, Users, LayoutDashboard, MousePointerClick, Globe } from 'lucide-react';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1, y: 0,
-    transition: { delay: i * 0.1, duration: 0.5 },
-  }),
-};
-
-const steps = [
-  { num: '01', title: 'Chegada à clínica', desc: 'O paciente chega à clínica e encontra o QR Code do RegiFlex disponível na recepção.' },
-  { num: '02', title: 'Acesso ao cadastro', desc: 'O paciente escaneia o QR Code com o celular e acessa o formulário digital.' },
-  { num: '03', title: 'Preenchimento dos dados', desc: 'O paciente preenche suas informações diretamente no sistema.' },
-  { num: '04', title: 'Registro automático', desc: 'O sistema envia os dados para a clínica e registra o paciente.' },
-  { num: '05', title: 'Entrada na fila', desc: 'O paciente é incluído na fila de atendimento e aguarda ser chamado.' },
+const features = [
+  { icon: ClipboardList, title: 'Cadastro digital de pacientes', description: 'Agilize o processo de entrada com o cadastro de pacientes de forma 100% digital.' },
+  { icon: Users, title: 'Organização da fila', description: 'Gerencie a fila de atendimento de forma eficiente e intuitiva, evitando atrasos.' },
+  { icon: LayoutDashboard, title: 'Painel administrativo', description: 'Tenha controle total sobre os atendimentos e dados da clínica em um único painel.' },
+  { icon: MousePointerClick, title: 'Interface intuitiva', description: 'Design pensado para facilitar o uso por recepcionistas e administradores.' },
+  { icon: Globe, title: 'Acesso via navegador', description: 'Acesse o sistema de qualquer lugar, a qualquer hora, diretamente pelo seu navegador.' },
 ];
 
 export default function RFFeatures() {
   return (
-    <section id="como-funciona" className="section-padding bg-secondary">
-      <div className="container-narrow mx-auto">
-        <motion.div
-          initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
-          variants={fadeUp} custom={0}
-          className="text-center max-w-2xl mx-auto mb-16"
+    <section id="funcionalidades" className="section-padding bg-background py-20 lg:py-32">
+      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-widest">Como funciona</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
-            Fluxo do sistema
-          </h2>
-        </motion.div>
+          Funcionalidades que simplificam seu dia a dia.
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
+        >
+          Descubra as ferramentas que o RegiFlex oferece para otimizar a gestão da sua clínica.
+        </motion.p>
 
-        <div className="relative">
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
-
-          <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-1 lg:gap-0">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step.num}
-                initial="hidden" whileInView="visible" viewport={{ once: true }}
-                variants={fadeUp} custom={i + 1}
-                className={`lg:flex items-center gap-8 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
-              >
-                <div className={`lg:w-1/2 ${i % 2 === 0 ? 'lg:text-right lg:pr-12' : 'lg:text-left lg:pl-12'}`}>
-                  <div className={`p-6 rounded-2xl bg-card border border-border/50 shadow-sm hover-lift inline-block text-left ${i % 2 === 0 ? 'lg:ml-auto' : ''}`}>
-                    <span className="text-xs font-bold text-primary tracking-wider">PASSO {step.num}</span>
-                    <h3 className="text-lg font-bold text-foreground mt-1 mb-2">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                  </div>
-                </div>
-
-                <div className="hidden lg:flex w-0 items-center justify-center relative">
-                  <div className="w-4 h-4 rounded-full bg-primary border-4 border-background shadow-md absolute" />
-                </div>
-
-                <div className="lg:w-1/2" />
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
+              className="glass-card p-8 flex flex-col items-center text-center hover-lift"
+            >
+              <div className="bg-rf-blue-light p-4 rounded-full inline-flex items-center justify-center mb-6 shadow-lg">
+                <feature.icon size={36} className="text-rf-blue" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+              <p className="text-muted-foreground">{feature.description}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

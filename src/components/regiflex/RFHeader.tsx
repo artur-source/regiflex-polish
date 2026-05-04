@@ -30,14 +30,16 @@ export default function RFHeader() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-background/90 backdrop-blur-xl shadow-sm border-b border-border/50'
+          ? 'bg-background/90 backdrop-blur-xl shadow-lg border-b border-border/50'
           : 'bg-transparent'
       }`}
     >
       <div className="container-narrow mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 lg:h-20">
-        <button onClick={() => scrollTo('#hero')} className="flex items-center gap-2">
-          <img src="/logo-regiflex.png" alt="RegiFlex" className="h-8 lg:h-10 w-auto" />
-          <span className={`font-bold text-lg lg:text-xl tracking-tight ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
+        <button onClick={() => scrollTo('#hero')} className="flex items-center gap-2 group">
+          <img src="/logo-regiflex.png" alt="RegiFlex" className="h-8 lg:h-10 w-auto group-hover:scale-105 transition-transform duration-300" />
+          <span className={`font-extrabold text-lg lg:text-xl tracking-tight transition-colors duration-300 ${
+            scrolled ? 'text-foreground' : 'text-primary-foreground'
+          }`}>
             RegiFlex
           </span>
         </button>
@@ -47,28 +49,31 @@ export default function RFHeader() {
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-300 relative group ${
                 scrolled
-                  ? 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  ? 'text-muted-foreground hover:text-primary hover:bg-muted'
                   : 'text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10'
               }`}
             >
               {link.label}
+              <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                scrolled ? 'bg-primary' : 'bg-primary-foreground'
+              }`} />
             </button>
           ))}
           <a
             href="https://appregiflex.com.br/login"
-            className={`ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+            className={`ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 border ${
               scrolled
-                ? 'text-foreground hover:bg-muted'
-                : 'text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10'
+                ? 'border-input text-foreground hover:bg-muted'
+                : 'border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10'
             }`}
           >
             Login
           </a>
           <a
             href="https://appregiflex.com.br/pricing"
-            className="ml-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="ml-2 px-5 py-2.5 bg-rf-accent text-white rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity shadow-md hover:shadow-lg"
           >
             Começar
           </a>
@@ -76,7 +81,7 @@ export default function RFHeader() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`lg:hidden p-2 rounded-lg ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}
+          className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}
           aria-label="Menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -97,13 +102,13 @@ export default function RFHeader() {
             ))}
             <a
               href="https://appregiflex.com.br/login"
-              className="mt-2 px-4 py-3 text-foreground hover:bg-muted rounded-lg text-sm font-semibold text-center transition-colors"
+              className="mt-2 px-4 py-3 text-foreground hover:bg-muted rounded-lg text-sm font-semibold text-center transition-colors border border-input"
             >
               Login
             </a>
             <a
               href="https://appregiflex.com.br/pricing"
-              className="mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold text-center"
+              className="mt-2 px-4 py-3 bg-rf-accent text-white rounded-lg text-sm font-semibold text-center shadow-md"
             >
               Começar
             </a>

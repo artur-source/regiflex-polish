@@ -59,12 +59,13 @@ export default {
         },
         rf: {
           blue: "hsl(var(--rf-blue))",
-          green: "hsl(var(--rf-green))",
-          yellow: "hsl(var(--rf-yellow))",
+          "blue-dark": "hsl(var(--rf-blue-dark))",
+          "blue-light": "hsl(var(--rf-blue-light))",
+          accent: "hsl(var(--rf-accent))",
           dark: "hsl(var(--rf-dark))",
           light: "hsl(var(--rf-light))",
-          "blue-light": "hsl(var(--rf-blue-light))",
-          "green-light": "hsl(var(--rf-green-light))",
+          gray: "hsl(var(--rf-gray))",
+          "gray-light": "hsl(var(--rf-gray-light))",
         },
       },
       borderRadius: {
@@ -93,6 +94,10 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        "pulse-light": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -100,6 +105,7 @@ export default {
         "fade-up": "fade-up 0.6s ease-out forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
         float: "float 3s ease-in-out infinite",
+        "pulse-light": "pulse-light 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },

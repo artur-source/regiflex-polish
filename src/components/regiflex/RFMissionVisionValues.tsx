@@ -1,32 +1,27 @@
 import { motion } from 'framer-motion';
-import { Stethoscope, BriefcaseMedical, Hospital, Users } from 'lucide-react';
+import { Target, Eye, Handshake } from 'lucide-react';
 
-const audienceItems = [
+const mvvItems = [
   {
-    icon: Stethoscope,
-    title: 'Clínicas médicas',
-    description: 'Solução ideal para clínicas de diversas especialidades que buscam otimizar o atendimento.',
+    icon: Target,
+    title: 'Missão',
+    description: 'Melhorar o fluxo de atendimento em clínicas através de tecnologia simples e acessível, otimizando a experiência de pacientes e profissionais da saúde.',
   },
   {
-    icon: BriefcaseMedical,
-    title: 'Consultórios',
-    description: 'Perfeito para consultórios individuais ou pequenos grupos, simplificando a gestão diária.',
+    icon: Eye,
+    title: 'Visão',
+    description: 'Ser a principal referência em soluções digitais inovadoras para a gestão de atendimento em saúde, reconhecida pela eficiência e impacto positivo.',
   },
   {
-    icon: Hospital,
-    title: 'Centros de saúde',
-    description: 'Atende às necessidades de centros de saúde maiores, com alto volume de pacientes.',
-  },
-  {
-    icon: Users,
-    title: 'Instituições de atendimento',
-    description: 'Adaptável para qualquer instituição que preste serviços de saúde e precise de organização.',
+    icon: Handshake,
+    title: 'Valores',
+    description: 'Eficiência, Simplicidade, Confiabilidade e Inovação. Guiamos nossas ações por esses pilares para construir um futuro mais ágil e humano na saúde.',
   },
 ];
 
-export default function RFAudience() {
+export default function RFMissionVisionValues() {
   return (
-    <section id="publico-alvo" className="section-padding bg-background py-20 lg:py-32">
+    <section id="missao-visao-valores" className="section-padding bg-rf-gray-light py-20 lg:py-32">
       <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +30,7 @@ export default function RFAudience() {
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
         >
-          Quem pode se beneficiar do RegiFlex?
+          Nossa Missão, Visão e Valores
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -44,11 +39,11 @@ export default function RFAudience() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
         >
-          Nossa solução é versátil e se adapta a diferentes tipos de estabelecimentos de saúde.
+          Pautamos nosso trabalho em princípios que visam a excelência e a transformação no setor da saúde.
         </motion.p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {audienceItems.map((item, index) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {mvvItems.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}

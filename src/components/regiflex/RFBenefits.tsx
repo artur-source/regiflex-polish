@@ -1,32 +1,32 @@
 import { motion } from 'framer-motion';
-import { Stethoscope, BriefcaseMedical, Hospital, Users } from 'lucide-react';
+import { Clock, LayoutList, Smile, TrendingUp } from 'lucide-react';
 
-const audienceItems = [
+const benefits = [
   {
-    icon: Stethoscope,
-    title: 'Clínicas médicas',
-    description: 'Solução ideal para clínicas de diversas especialidades que buscam otimizar o atendimento.',
+    icon: Clock,
+    title: 'Redução do tempo de espera',
+    description: 'Otimize o fluxo de pacientes e minimize o tempo de espera na recepção, melhorando a satisfação.',
   },
   {
-    icon: BriefcaseMedical,
-    title: 'Consultórios',
-    description: 'Perfeito para consultórios individuais ou pequenos grupos, simplificando a gestão diária.',
+    icon: LayoutList,
+    title: 'Organização do fluxo de pacientes',
+    description: 'Gerencie a fila de forma inteligente, evitando aglomerações e garantindo um atendimento sequencial.',
   },
   {
-    icon: Hospital,
-    title: 'Centros de saúde',
-    description: 'Atende às necessidades de centros de saúde maiores, com alto volume de pacientes.',
+    icon: Smile,
+    title: 'Melhoria da experiência de atendimento',
+    description: 'Proporcione uma experiência moderna e eficiente, desde o check-in até o atendimento final.',
   },
   {
-    icon: Users,
-    title: 'Instituições de atendimento',
-    description: 'Adaptável para qualquer instituição que preste serviços de saúde e precise de organização.',
+    icon: TrendingUp,
+    title: 'Modernização da recepção',
+    description: 'Transforme a recepção da sua clínica em um ambiente tecnológico e inovador, refletindo profissionalismo.',
   },
 ];
 
-export default function RFAudience() {
+export default function RFBenefits() {
   return (
-    <section id="publico-alvo" className="section-padding bg-background py-20 lg:py-32">
+    <section id="beneficios" className="section-padding bg-background py-20 lg:py-32">
       <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export default function RFAudience() {
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
         >
-          Quem pode se beneficiar do RegiFlex?
+          Benefícios que transformam sua clínica.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -44,11 +44,11 @@ export default function RFAudience() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
         >
-          Nossa solução é versátil e se adapta a diferentes tipos de estabelecimentos de saúde.
+          Descubra como o RegiFlex pode otimizar a gestão e a experiência dos seus pacientes.
         </motion.p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {audienceItems.map((item, index) => (
+          {benefits.map((benefit, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -58,10 +58,10 @@ export default function RFAudience() {
               className="glass-card p-8 flex flex-col items-center text-center hover-lift"
             >
               <div className="bg-rf-blue-light p-4 rounded-full inline-flex items-center justify-center mb-6 shadow-lg">
-                <item.icon size={36} className="text-rf-blue" />
+                <benefit.icon size={36} className="text-rf-blue" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
-              <p className="text-muted-foreground">{item.description}</p>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{benefit.title}</h3>
+              <p className="text-muted-foreground">{benefit.description}</p>
             </motion.div>
           ))}
         </div>

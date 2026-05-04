@@ -1,69 +1,76 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
 
 export default function RFHero() {
-  const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-  };
+  useEffect(() => {
+    // Preload mascot image for smoother animation
+    const img = new Image();
+    img.src = '/flux-mascot.jpg';
+  }, []);
 
   return (
-    <section id="hero" className="relative gradient-hero min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-primary-foreground/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-60 -left-40 w-[600px] h-[600px] bg-primary-foreground/5 rounded-full blur-3xl" />
-      </div>
-
-      <div className="container-narrow mx-auto section-padding relative z-10 pt-28 lg:pt-32">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+    <section id="hero" className="relative overflow-hidden bg-gradient-to-br from-rf-blue to-rf-blue-dark text-white py-20 lg:py-32 min-h-screen flex items-center">
+      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="lg:w-1/2 text-center lg:text-left">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-center lg:text-left"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-primary-foreground mb-6">
-              RegiFlex — Cadastro inteligente e gestão de atendimento para clínicas.
-            </h1>
-
-            <p className="text-lg sm:text-xl text-primary-foreground/70 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              Reduza filas, organize o atendimento e modernize a recepção da sua clínica com uma plataforma digital simples e eficiente.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href="https://appregiflex.com.br/pricing"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-primary-foreground text-primary font-bold rounded-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              >
-                Começar Agora
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <button
-                onClick={() => scrollTo('#como-funciona')}
-                className="group inline-flex items-center justify-center gap-2 px-7 py-4 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-xl hover:bg-primary-foreground/10 transition-all duration-300"
-              >
-                <Play size={16} />
-                Saiba mais
-              </button>
-            </div>
-          </motion.div>
-
+            RegiFlex — Cadastro inteligente e gestão de atendimento para clínicas.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg sm:text-xl lg:text-2xl text-gray-200 mb-8"
+          >
+            Reduza filas, organize o atendimento e modernize a recepção da sua clínica com uma plataforma digital simples e eficiente.
+          </motion.p>
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-primary-foreground/10 rounded-3xl blur-2xl" />
-              <img
-                src="/logo-regiflex.png"
-                alt="RegiFlex Logo"
-                className="relative w-48 sm:w-56 lg:w-64 animate-float"
-              />
-            </div>
+            <a
+              href="https://appregiflex.com.br/pricing"
+              className="px-8 py-3 bg-rf-accent text-white rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl"
+            >
+              Começar Agora
+            </a>
+            <button
+              onClick={() => document.querySelector("#como-funciona")?.scrollIntoView({ behavior: "smooth" })}
+              className="px-8 py-3 border border-white/30 text-white rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              Saiba mais
+            </button>
+          </motion.div>
+        </div>
+        <div className="lg:w-1/2 flex justify-center lg:justify-end relative mt-12 lg:mt-0">
+          <motion.img
+            src="/flux-mascot.jpg"
+            alt="Mascote Flux - Raposa tecnológica"
+            initial={{ opacity: 0, x: 50, rotate: 5 }}
+            animate={{ opacity: 1, x: 0, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, type: "spring", stiffness: 100 }}
+            className="w-full max-w-md lg:max-w-lg rounded-lg shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
+          />
+          {/* Optional: Add a subtle pulse animation to the mascot */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0.7 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+            className="absolute inset-0 flex items-center justify-center"
+          >
+            <div className="w-3/4 h-3/4 bg-white/10 rounded-full animate-pulse-light" style={{ filter: 'blur(30px)' }}></div>
           </motion.div>
         </div>
       </div>
+      {/* Background decorative elements */}
+      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/20 to-transparent"></div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 transform skew-x-12 -translate-x-1/4"></div>
     </section>
   );
 }

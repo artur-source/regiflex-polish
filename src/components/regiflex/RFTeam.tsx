@@ -1,49 +1,67 @@
 import { motion } from 'framer-motion';
-import { Code2, Palette, TrendingUp, FileText, Search, Users } from 'lucide-react';
+import { Code2, Lightbulb, Palette, Settings } from 'lucide-react';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1, y: 0,
-    transition: { delay: i * 0.1, duration: 0.5 },
-  }),
-};
-
-const team = [
-  { name: 'Artur Alves Santos', role: 'Líder de projeto', icon: Users, rgm: '2417606' },
-  { name: 'Guilherme Almeida', role: 'Designer UX/UI', icon: Palette, rgm: '2417704' },
-  { name: 'Nicollas Andrey', role: 'Responsável por pesquisa', icon: Search, rgm: '2417423' },
+const teamSections = [
+  {
+    icon: Code2,
+    title: 'Desenvolvimento',
+    description: 'Nossa equipe de engenharia é responsável por construir e manter a plataforma RegiFlex, garantindo robustez e escalabilidade.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Produto',
+    description: 'O time de produto idealiza e refina as funcionalidades, assegurando que o RegiFlex atenda às necessidades reais das clínicas.',
+  },
+  {
+    icon: Palette,
+    title: 'Design',
+    description: 'Nossos designers criam interfaces intuitivas e uma experiência de usuário fluida, tornando o RegiFlex agradável e fácil de usar.',
+  },
+  {
+    icon: Settings,
+    title: 'Operações',
+    description: 'A equipe de operações garante que o sistema esteja sempre disponível e funcionando perfeitamente, oferecendo suporte contínuo.',
+  },
 ];
 
 export default function RFTeam() {
   return (
-    <section id="equipe" className="section-padding bg-background">
-      <div className="container-narrow mx-auto">
-        <motion.div
-          initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
-          variants={fadeUp} custom={0}
-          className="text-center max-w-2xl mx-auto mb-16"
+    <section id="equipe" className="section-padding bg-background py-20 lg:py-32">
+      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-widest">Equipe</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
-            Nossa equipe
-          </h2>
-        </motion.div>
+          Conheça a equipe por trás do RegiFlex.
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
+        >
+          Profissionais dedicados que trabalham para transformar a gestão de clínicas no Brasil.
+        </motion.p>
 
-        <div className="grid sm:grid-cols-3 gap-6">
-          {team.map((m, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {teamSections.map((section, index) => (
             <motion.div
-              key={m.name}
-              initial="hidden" whileInView="visible" viewport={{ once: true }}
-              variants={fadeUp} custom={i + 1}
-              className="p-8 rounded-2xl bg-card border border-border/50 text-center hover-lift"
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
+              className="glass-card p-8 flex flex-col items-center text-center hover-lift"
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                <m.icon className="text-primary" size={24} />
+              <div className="bg-rf-blue-light p-4 rounded-full inline-flex items-center justify-center mb-6 shadow-lg">
+                <section.icon size={36} className="text-rf-blue" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-1">{m.name}</h3>
-              <p className="text-sm font-semibold text-primary mb-3">{m.role}</p>
-              <span className="text-xs text-muted-foreground">RGM: {m.rgm}</span>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{section.title}</h3>
+              <p className="text-muted-foreground">{section.description}</p>
             </motion.div>
           ))}
         </div>

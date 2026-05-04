@@ -1,81 +1,84 @@
 import { Mail, Instagram } from 'lucide-react';
 
+const navLinks = [
+  { label: 'Solução', href: '#solucao' },
+  { label: 'Como funciona', href: '#como-funciona' },
+  { label: 'Funcionalidades', href: '#funcionalidades' },
+  { label: 'Diferenciais', href: '#diferenciais' },
+  { label: 'Sobre', href: '#sobre' },
+  { label: 'Equipe', href: '#equipe' },
+  { label: 'Contato', href: '#contato' },
+];
+
 export default function RFFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-primary-foreground">
-      <div className="container-narrow mx-auto section-padding pb-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img src="/logo-regiflex.png" alt="RegiFlex" className="h-8 w-auto" />
-              <span className="font-bold text-lg">RegiFlex</span>
+    <footer className="bg-rf-dark text-white py-16 lg:py-24">
+      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
+          <div className="col-span-full lg:col-span-1 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+              <img src="/logo-regiflex.png" alt="RegiFlex" className="h-9 w-auto" />
+              <span className="font-extrabold text-xl">RegiFlex</span>
             </div>
-            <p className="text-primary-foreground/60 text-sm leading-relaxed">
+            <p className="text-rf-gray-light text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
               Transformando o fluxo de atendimento clínico com tecnologia simples e acessível.
             </p>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-sm mb-4 text-primary-foreground/80">Redes Sociais</h4>
+          <div className="text-center md:text-left">
+            <h4 className="font-semibold text-base mb-5 text-white">Links Rápidos</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-primary-foreground/50">
-                <Mail size={14} />
-                <a href="mailto:regiflex.contato@gmail.com" className="hover:text-primary-foreground transition-colors">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="text-rf-gray-light text-sm hover:text-white transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="text-center md:text-left">
+            <h4 className="font-semibold text-base mb-5 text-white">Contato</h4>
+            <ul className="space-y-3">
+              <li className="flex items-center justify-center md:justify-start gap-2 text-sm text-rf-gray-light">
+                <Mail size={16} className="text-rf-blue" />
+                <a href="mailto:regiflex.contato@gmail.com" className="hover:text-white transition-colors">
                   regiflex.contato@gmail.com
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-primary-foreground/50">
-                <Instagram size={14} />
-                <a href="https://www.instagram.com/regiflex.app" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">
+              <li className="flex items-center justify-center md:justify-start gap-2 text-sm text-rf-gray-light">
+                <Instagram size={16} className="text-rf-blue" />
+                <a href="https://www.instagram.com/regiflex.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   @regiflex.app
                 </a>
               </li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-sm mb-4 text-primary-foreground/80">Institucional</h4>
-            <p className="text-sm text-primary-foreground/50 leading-relaxed">
-              Projeto de Startups — UniPiaget<br />
-              Análise e Desenvolvimento de Sistemas<br />
-              Suzano – SP
-            </p>
+          <div className="text-center md:text-left">
+            <h4 className="font-semibold text-base mb-5 text-white">Legal</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#" className="text-rf-gray-light text-sm hover:text-white transition-colors">
+                  Política de Privacidade
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-rf-gray-light text-sm hover:text-white transition-colors">
+                  Termos de Serviço
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-8">
-          <div className="flex flex-wrap justify-center gap-6 mb-6">
-            <a href="https://appregiflex.com.br/privacy" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              Privacy
-            </a>
-            <a href="https://appregiflex.com.br/terms" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              Terms
-            </a>
-            <a href="https://appregiflex.com.br/faq" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              FAQ
-            </a>
-            <a href="https://appregiflex.com.br/contact" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              Contato
-            </a>
-          </div>
-          <div className="text-center space-y-2">
-            <p className="text-xs text-primary-foreground/40">
-              © {year} RegiFlex — Todos os direitos reservados.
-            </p>
-            <p className="text-xs text-primary-foreground/50">
-              Feito por{' '}
-              <a
-                href="https://core-patch-website.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-foreground/70 hover:text-primary-foreground transition-colors font-semibold"
-              >
-                Core & Patch
-              </a>
-            </p>
-          </div>
+        <div className="text-center pt-8">
+          <p className="text-xs text-rf-gray-light">
+            © {year} RegiFlex — Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>
