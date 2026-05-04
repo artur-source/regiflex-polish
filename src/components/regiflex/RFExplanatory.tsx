@@ -1,80 +1,80 @@
 import { motion } from 'framer-motion';
-import { QrCode, UserPlus, ListChecks } from 'lucide-react';
+import { UserPlus, QrCode, Users } from 'lucide-react';
 
 const steps = [
   {
-    icon: UserPlus,
-    title: 'Clínica cria conta',
-    description: 'Comece em minutos. Cadastre sua clínica e configure seu perfil de atendimento de forma rápida e intuitiva.',
+    icon: <UserPlus className="w-8 h-8 text-blue-600" />,
+    title: "Clínica cria conta",
+    description: "Cadastro rápido da clínica em poucos minutos."
   },
   {
-    icon: QrCode,
-    title: 'Sistema gera QR Code',
-    description: 'Seu paciente escaneia um QR Code único na recepção e entra automaticamente na fila de atendimento.',
+    icon: <QrCode className="w-8 h-8 text-blue-600" />,
+    title: "Sistema gera QR Code",
+    description: "Check-in digital imediato para seus pacientes."
   },
   {
-    icon: ListChecks,
-    title: 'Paciente entra automaticamente na fila',
-    description: 'Gerencie a fila de forma eficiente, visualize o status dos pacientes e otimize o tempo de espera.',
-  },
+    icon: <Users className="w-8 h-8 text-blue-600" />,
+    title: "Paciente entra na fila",
+    description: "Fila organizada automaticamente e sem estresse."
+  }
 ];
 
 export default function RFExplanatory() {
   return (
-    <section id="como-funciona" className="section-padding bg-rf-gray-light py-20 lg:py-32">
-      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
-        >
-          Um fluxo simples e eficiente em três etapas.
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
-        >
-          Veja como o RegiFlex transforma a gestão de atendimento da sua clínica em um processo ágil e moderno.
-        </motion.p>
+    <section id="como-funciona" className="py-24 bg-slate-50 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Como funciona</h2>
+          <p className="text-lg text-slate-600 font-medium">Fluxo direto em 3 etapas</p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="glass-card p-8 flex flex-col items-center text-center relative"
-            >
-              <div className="relative mb-6">
-                <div className="bg-rf-blue-light p-4 rounded-full inline-flex items-center justify-center shadow-lg">
-                  <step.icon size={36} className="text-rf-blue" />
+        <div className="relative">
+          {/* Mascote Flux Apontando */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="absolute -left-12 -top-20 hidden lg:block w-48"
+          >
+            <img 
+              src="/flux-mascot.jpg" 
+              alt="Flux Mascot" 
+              className="w-full h-auto rounded-full border-4 border-white shadow-xl"
+            />
+            <div className="absolute top-1/2 -right-8 transform -translate-y-1/2">
+              <motion.div
+                animate={{ x: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+                className="text-blue-600"
+              >
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow text-center group"
+              >
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {step.icon}
                 </div>
-                {index < steps.length - 1 && (
-                  <div className="absolute top-1/2 right-0 w-full h-0.5 bg-border transform translate-x-full -translate-y-1/2 hidden md:block"></div>
-                )}
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
-              <p className="text-muted-foreground">{step.description}</p>
-            </motion.div>
-          ))}
-          {/* Flux mascot integration */}
-          <motion.img
-            src="/flux-mascot.jpg"
-            alt="Mascote Flux interagindo com o fluxo de trabalho"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.8, delay: 0.5, type: "spring", stiffness: 100 }}
-            className="absolute hidden lg:block w-24 h-auto -bottom-16 left-1/2 transform -translate-x-1/2 rotate-6"
-            style={{ zIndex: 2 }}
-          />
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Linha conectora decorativa para desktop */}
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 -translate-y-1/2 hidden md:block -z-0" />
         </div>
       </div>
     </section>

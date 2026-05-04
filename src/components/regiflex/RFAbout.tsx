@@ -1,55 +1,49 @@
 import { motion } from 'framer-motion';
+import { AlertCircle, CheckCircle2, Target } from 'lucide-react';
 
-const aboutSections = [
+const blocks = [
   {
-    title: 'Quem somos',
-    content: 'A RegiFlex nasceu da observação de um problema real: a ineficiência nos processos de cadastro e atendimento em clínicas. Nossa equipe, composta por profissionais de tecnologia e saúde, uniu forças para criar uma solução que realmente fizesse a diferença no dia a dia de clínicas e pacientes.',
+    icon: <AlertCircle className="w-6 h-6 text-red-500" />,
+    title: "Problema",
+    content: "Filas desorganizadas e processos manuais que geram estresse e perda de tempo."
   },
   {
-    title: 'Propósito',
-    content: 'Nosso propósito é transformar o fluxo clínico através de tecnologia simples e acessível. Acreditamos que a inovação deve servir para descomplicar, otimizar e humanizar a experiência de todos os envolvidos no processo de atendimento à saúde.',
+    icon: <CheckCircle2 className="w-6 h-6 text-green-500" />,
+    title: "Solução",
+    content: "Digitalização completa do fluxo de atendimento com check-in via QR Code."
   },
   {
-    title: 'Contexto',
-    content: 'Filas longas, retrabalho administrativo e atrasos no atendimento são desafios comuns que afetam a qualidade do serviço e a satisfação do paciente. O RegiFlex surge como a resposta a esses problemas, oferecendo uma plataforma que organiza, agiliza e moderniza a recepção e o cadastro.',
-  },
+    icon: <Target className="w-6 h-6 text-blue-500" />,
+    title: "Objetivo",
+    content: "Trazer mais eficiência na recepção clínica e uma experiência moderna para o paciente."
+  }
 ];
 
 export default function RFAbout() {
   return (
-    <section id="sobre" className="section-padding bg-background py-20 lg:py-32">
-      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
-        >
-          Sobre o RegiFlex
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
-        >
-          Conheça a história, o propósito e o impacto que buscamos gerar no setor da saúde.
-        </motion.p>
+    <section id="sobre" className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Sobre o RegiFlex</h2>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {aboutSections.map((section, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {blocks.map((block, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="glass-card p-8 text-left hover-lift"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-colors"
             >
-              <h3 className="text-xl font-semibold text-foreground mb-3">{section.title}</h3>
-              <p className="text-muted-foreground">{section.content}</p>
+              <div className="flex items-center gap-3 mb-4">
+                {block.icon}
+                <h3 className="text-xl font-bold text-slate-900">{block.title}</h3>
+              </div>
+              <p className="text-slate-600 leading-relaxed font-medium">
+                {block.content}
+              </p>
             </motion.div>
           ))}
         </div>

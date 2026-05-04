@@ -1,69 +1,92 @@
 import { motion } from 'framer-motion';
-import { Code2, Lightbulb, Palette, Settings } from 'lucide-react';
+import { User, Code, Megaphone, ShieldCheck, Layout, TrendingUp } from 'lucide-react';
 
-const teamSections = [
+const team = [
   {
-    icon: Code2,
-    title: 'Desenvolvimento',
-    description: 'Nossa equipe de engenharia é responsável por construir e manter a plataforma RegiFlex, garantindo robustez e escalabilidade.',
+    name: "Artur Alves",
+    role: "Líder técnico",
+    icon: <User className="w-10 h-10 text-blue-600" />
   },
   {
-    icon: Lightbulb,
-    title: 'Produto',
-    description: 'O time de produto idealiza e refina as funcionalidades, assegurando que o RegiFlex atenda às necessidades reais das clínicas.',
+    name: "Guilherme Almeida",
+    role: "Front-End, UX e UI",
+    icon: <Layout className="w-10 h-10 text-blue-600" />
   },
   {
-    icon: Palette,
-    title: 'Design',
-    description: 'Nossos designers criam interfaces intuitivas e uma experiência de usuário fluida, tornando o RegiFlex agradável e fácil de usar.',
+    name: "Nicollas Andrey",
+    role: "Marketing",
+    icon: <Megaphone className="w-10 h-10 text-blue-600" />
+  }
+];
+
+const structure = [
+  {
+    title: "Liderança Técnica",
+    name: "Artur Alves Santos",
+    desc: "Arquitetura e desenvolvimento do sistema",
+    icon: <ShieldCheck className="w-6 h-6 text-blue-500" />
   },
   {
-    icon: Settings,
-    title: 'Operações',
-    description: 'A equipe de operações garante que o sistema esteja sempre disponível e funcionando perfeitamente, oferecendo suporte contínuo.',
+    title: "Desenvolvimento do Produto",
+    name: "Guilherme Almeida",
+    desc: "Experiência do usuário e interfaces",
+    icon: <Code className="w-6 h-6 text-blue-500" />
   },
+  {
+    title: "Estratégia e Mercado",
+    name: "Nicollas Andrey",
+    desc: "Negócio e posicionamento",
+    icon: <TrendingUp className="w-6 h-6 text-blue-500" />
+  }
 ];
 
 export default function RFTeam() {
   return (
-    <section id="equipe" className="section-padding bg-background py-20 lg:py-32">
-      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
-        >
-          Conheça a equipe por trás do RegiFlex.
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
-        >
-          Profissionais dedicados que trabalham para transformar a gestão de clínicas no Brasil.
-        </motion.p>
+    <section id="equipe" className="py-24 bg-slate-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Equipe Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12">Equipe</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100"
+              >
+                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                  {member.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
+                <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider">{member.role}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamSections.map((section, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="glass-card p-8 flex flex-col items-center text-center hover-lift"
-            >
-              <div className="bg-rf-blue-light p-4 rounded-full inline-flex items-center justify-center mb-6 shadow-lg">
-                <section.icon size={36} className="text-rf-blue" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{section.title}</h3>
-              <p className="text-muted-foreground">{section.description}</p>
-            </motion.div>
-          ))}
+        {/* Organograma Section */}
+        <div className="mt-32">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-12">Estrutura do projeto</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {structure.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative p-6 bg-white rounded-2xl border-l-4 border-blue-600 shadow-sm"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  {item.icon}
+                  <h4 className="font-bold text-slate-900">{item.title}</h4>
+                </div>
+                <p className="text-slate-900 font-bold text-lg mb-1">{item.name}</p>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

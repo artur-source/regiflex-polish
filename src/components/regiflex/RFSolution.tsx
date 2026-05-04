@@ -1,32 +1,39 @@
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
 export default function RFSolution() {
   return (
-    <section id="solucao" className="section-padding bg-background">
-      <div className="container-narrow mx-auto">
+    <section id="solucao" className="py-24 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-80px' }}
-          variants={fadeUp}
-          className="max-w-3xl mx-auto text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-bold text-sm mb-8"
         >
-          <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-            <Sparkles className="text-primary" size={28} />
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6 tracking-tight">
-            A solução <span className="text-gradient-blue">RegiFlex</span>
-          </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            RegiFlex é uma plataforma digital criada para otimizar o cadastro de pacientes e organizar o fluxo de atendimento em clínicas. A solução permite que pacientes realizem seu cadastro de forma rápida e que a clínica gerencie a fila de atendimento de maneira eficiente.
-          </p>
+          <Sparkles size={16} />
+          <span>A Solução</span>
         </motion.div>
+        
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight"
+        >
+          O RegiFlex digitaliza o cadastro e a fila da sua clínica.
+        </motion.h2>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="text-xl text-slate-600 leading-relaxed"
+        >
+          Uma plataforma intuitiva que elimina processos manuais, reduz o tempo de espera e moderniza a experiência do paciente desde o primeiro contato.
+        </motion.p>
       </div>
     </section>
   );

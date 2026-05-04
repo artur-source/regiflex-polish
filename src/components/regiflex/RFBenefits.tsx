@@ -1,67 +1,47 @@
 import { motion } from 'framer-motion';
-import { Clock, LayoutList, Smile, TrendingUp } from 'lucide-react';
+import { Clock, ListChecks, Smile, Monitor } from 'lucide-react';
 
 const benefits = [
   {
-    icon: Clock,
-    title: 'Redução do tempo de espera',
-    description: 'Otimize o fluxo de pacientes e minimize o tempo de espera na recepção, melhorando a satisfação.',
+    icon: <Clock className="w-8 h-8 text-blue-600" />,
+    title: "Menos tempo de espera"
   },
   {
-    icon: LayoutList,
-    title: 'Organização do fluxo de pacientes',
-    description: 'Gerencie a fila de forma inteligente, evitando aglomerações e garantindo um atendimento sequencial.',
+    icon: <ListChecks className="w-8 h-8 text-blue-600" />,
+    title: "Fila organizada"
   },
   {
-    icon: Smile,
-    title: 'Melhoria da experiência de atendimento',
-    description: 'Proporcione uma experiência moderna e eficiente, desde o check-in até o atendimento final.',
+    icon: <Smile className="w-8 h-8 text-blue-600" />,
+    title: "Melhor experiência"
   },
   {
-    icon: TrendingUp,
-    title: 'Modernização da recepção',
-    description: 'Transforme a recepção da sua clínica em um ambiente tecnológico e inovador, refletindo profissionalismo.',
-  },
+    icon: <Monitor className="w-8 h-8 text-blue-600" />,
+    title: "Recepção digital"
+  }
 ];
 
 export default function RFBenefits() {
   return (
-    <section id="beneficios" className="section-padding bg-background py-20 lg:py-32">
-      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
-        >
-          Benefícios que transformam sua clínica.
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
-        >
-          Descubra como o RegiFlex pode otimizar a gestão e a experiência dos seus pacientes.
-        </motion.p>
+    <section id="beneficios" className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Benefícios</h2>
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="glass-card p-8 flex flex-col items-center text-center hover-lift"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col items-center text-center group hover:bg-blue-50 transition-colors"
             >
-              <div className="bg-rf-blue-light p-4 rounded-full inline-flex items-center justify-center mb-6 shadow-lg">
-                <benefit.icon size={36} className="text-rf-blue" />
+              <div className="mb-4 group-hover:scale-110 transition-transform">
+                {benefit.icon}
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{benefit.title}</h3>
-              <p className="text-muted-foreground">{benefit.description}</p>
+              <h3 className="text-lg font-bold text-slate-900">{benefit.title}</h3>
             </motion.div>
           ))}
         </div>

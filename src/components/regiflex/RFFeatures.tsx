@@ -1,52 +1,57 @@
 import { motion } from 'framer-motion';
-import { ClipboardList, Users, LayoutDashboard, MousePointerClick, Globe } from 'lucide-react';
+import { QrCode, ListChecks, Layout, MousePointer2, Globe } from 'lucide-react';
 
 const features = [
-  { icon: ClipboardList, title: 'Cadastro digital de pacientes', description: 'Agilize o processo de entrada com o cadastro de pacientes de forma 100% digital.' },
-  { icon: Users, title: 'Organização da fila', description: 'Gerencie a fila de atendimento de forma eficiente e intuitiva, evitando atrasos.' },
-  { icon: LayoutDashboard, title: 'Painel administrativo', description: 'Tenha controle total sobre os atendimentos e dados da clínica em um único painel.' },
-  { icon: MousePointerClick, title: 'Interface intuitiva', description: 'Design pensado para facilitar o uso por recepcionistas e administradores.' },
-  { icon: Globe, title: 'Acesso via navegador', description: 'Acesse o sistema de qualquer lugar, a qualquer hora, diretamente pelo seu navegador.' },
+  {
+    icon: <QrCode className="w-6 h-6 text-blue-600" />,
+    title: "Cadastro digital",
+    desc: "Check-in via QR Code sem papelada."
+  },
+  {
+    icon: <ListChecks className="w-6 h-6 text-blue-600" />,
+    title: "Gestão de fila",
+    desc: "Organização automática por ordem de chegada."
+  },
+  {
+    icon: <Layout className="w-6 h-6 text-blue-600" />,
+    title: "Painel ADM",
+    desc: "Controle total da recepção em tempo real."
+  },
+  {
+    icon: <MousePointer2 className="w-6 h-6 text-blue-600" />,
+    title: "Interface intuitiva",
+    desc: "Fácil de usar para equipe e pacientes."
+  },
+  {
+    icon: <Globe className="w-6 h-6 text-blue-600" />,
+    title: "Acesso Web",
+    desc: "Funciona em qualquer navegador."
+  }
 ];
 
 export default function RFFeatures() {
   return (
-    <section id="funcionalidades" className="section-padding bg-background py-20 lg:py-32">
-      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
-        >
-          Funcionalidades que simplificam seu dia a dia.
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
-        >
-          Descubra as ferramentas que o RegiFlex oferece para otimizar a gestão da sua clínica.
-        </motion.p>
+    <section id="funcionalidades" className="py-24 bg-slate-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Funcionalidades</h2>
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="glass-card p-8 flex flex-col items-center text-center hover-lift"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group"
             >
-              <div className="bg-rf-blue-light p-4 rounded-full inline-flex items-center justify-center mb-6 shadow-lg">
-                <feature.icon size={36} className="text-rf-blue" />
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
+              <p className="text-slate-500 text-sm">{feature.desc}</p>
             </motion.div>
           ))}
         </div>
