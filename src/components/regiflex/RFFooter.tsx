@@ -62,12 +62,12 @@ export default function RFFooter() {
             <h4 className="font-semibold text-base mb-5 text-white">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-slate-400 text-sm hover:text-white transition-colors">
+                <a href="https://appregiflex.com.br/privacy" target="_blank" rel="noopener noreferrer" className="text-slate-400 text-sm hover:text-white transition-colors">
                   Política de Privacidade
                 </a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 text-sm hover:text-white transition-colors">
+                <a href="https://appregiflex.com.br/terms" target="_blank" rel="noopener noreferrer" className="text-slate-400 text-sm hover:text-white transition-colors">
                   Termos de Serviço
                 </a>
               </li>
