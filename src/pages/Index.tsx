@@ -2,6 +2,7 @@ import RFHeader from '@/components/regiflex/RFHeader';
 import RFHero from '@/components/regiflex/RFHero';
 import RFSolution from '@/components/regiflex/RFSolution';
 import RFExplanatory from '@/components/regiflex/RFExplanatory';
+import RFFluxSection from '@/components/regiflex/RFFluxSection';
 import RFFeatures from '@/components/regiflex/RFFeatures';
 import RFDifferentials from '@/components/regiflex/RFDifferentials';
 import RFAbout from '@/components/regiflex/RFAbout';
@@ -18,6 +19,7 @@ const Index = () => {
         <RFHero />
         <RFSolution />
         <RFExplanatory />
+        <RFFluxSection />
         <RFBenefits />
         <RFFeatures />
         <RFDifferentials />

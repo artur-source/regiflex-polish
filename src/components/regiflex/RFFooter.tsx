@@ -3,6 +3,7 @@ import { Mail, Instagram } from 'lucide-react';
 const navLinks = [
   { label: 'Solução', href: '#solucao' },
   { label: 'Como funciona', href: '#como-funciona' },
+  { label: 'Flux', href: '#flux' },
   { label: 'Funcionalidades', href: '#funcionalidades' },
   { label: 'Diferenciais', href: '#diferenciais' },
   { label: 'Sobre', href: '#sobre' },
