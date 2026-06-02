@@ -12,9 +12,9 @@ const differentials = [
 
 export default function RFDifferentials() {
   return (
-    <section id="diferenciais" className="bg-slate-50 py-20 lg:py-28">
+    <section id="diferenciais" className="bg-slate-50 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 max-w-3xl">
+        <div className="mb-16 max-w-3xl">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Diferenciais</h2>
           <p className="mt-4 text-lg leading-relaxed text-slate-600">
             O foco do RegiFlex é transformar o atendimento em um processo mais visível, seguro e fácil de operar.
@@ -23,7 +23,7 @@ export default function RFDifferentials() {
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {differentials.map((diff, index) => (
-            <article key={diff.title} className={`rounded-2xl border p-6 shadow-sm ${index === 6 ? 'border-emerald-200 bg-emerald-50 lg:col-span-2' : 'border-slate-200 bg-white'}`}>
+            <article key={diff.title} className={`rounded-2xl border p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/5 ${index === 6 ? 'border-emerald-200 bg-emerald-50 lg:col-span-2' : 'border-slate-200 bg-white'}`}>
               <diff.icon className={`h-7 w-7 ${index === 6 ? 'text-emerald-700' : 'text-blue-600'}`} />
               <h3 className="mt-5 text-lg font-extrabold text-slate-950">{diff.title}</h3>
               <p className="mt-2 leading-relaxed text-slate-600">{diff.desc}</p>
@@ -31,9 +31,9 @@ export default function RFDifferentials() {
           ))}
         </div>
 
-        <div id="flux" className="mt-12 grid gap-8 rounded-[2rem] border border-blue-100 bg-white p-6 shadow-sm lg:grid-cols-[0.65fr_1fr] lg:p-8">
+        <div id="flux" className="mt-14 grid gap-10 rounded-2xl border border-blue-100 bg-white p-7 shadow-xl shadow-blue-950/5 lg:grid-cols-[0.65fr_1fr] lg:p-9">
           <div>
-            <img src="/flux-mascot.jpg" alt="Flux, mascote do RegiFlex" className="mx-auto max-w-xs rounded-3xl border border-slate-200 shadow-lg" />
+            <img src="/flux-mascot.jpg" alt="Flux, mascote do RegiFlex" className="mx-auto w-full max-w-xs rounded-2xl border border-slate-200 shadow-lg" />
           </div>
           <div className="flex flex-col justify-center">
             <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-bold text-blue-700">

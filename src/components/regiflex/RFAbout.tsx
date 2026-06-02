@@ -14,7 +14,7 @@ const timeline = [
 
 export default function RFAbout() {
   return (
-    <section id="sobre" className="bg-slate-950 py-20 text-white lg:py-28">
+    <section id="sobre" className="bg-slate-950 py-24 text-white lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
@@ -29,7 +29,7 @@ export default function RFAbout() {
 
           <div className="grid gap-4 md:grid-cols-3">
             {blocks.map((block) => (
-              <article key={block.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+              <article key={block.title} className="rounded-2xl border border-white/10 bg-white/[0.05] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08]">
                 <block.icon className="h-6 w-6 text-emerald-300" />
                 <h3 className="mt-4 font-extrabold">{block.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-300">{block.content}</p>
@@ -38,11 +38,11 @@ export default function RFAbout() {
           </div>
         </div>
 
-        <div className="mt-14 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 lg:p-8">
-          <h3 className="mb-6 text-2xl font-extrabold">Linha do tempo</h3>
-          <div className="grid gap-4 md:grid-cols-3">
+        <div className="mt-16 rounded-2xl border border-white/10 bg-white/[0.05] p-7 shadow-xl shadow-black/20 lg:p-9">
+          <h3 className="mb-8 text-2xl font-extrabold">Linha do tempo</h3>
+          <div className="grid gap-5 md:grid-cols-3">
             {timeline.map((item) => (
-              <div key={item.year} className="rounded-2xl bg-white p-5 text-slate-950">
+              <div key={item.year} className="rounded-2xl bg-white p-6 text-slate-950 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1">
                 <p className="text-3xl font-extrabold text-blue-600">{item.year}</p>
                 <h4 className="mt-2 text-lg font-extrabold">{item.label}</h4>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>

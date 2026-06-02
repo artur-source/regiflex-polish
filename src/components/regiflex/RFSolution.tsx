@@ -9,7 +9,7 @@ const flow = [
 
 export default function RFSolution() {
   return (
-    <section id="solucao" className="bg-slate-950 py-20 text-white lg:py-28">
+    <section id="solucao" className="bg-slate-950 py-24 text-white lg:py-32">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
@@ -23,12 +23,12 @@ export default function RFSolution() {
           </p>
         </div>
 
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-blue-950/30">
-          <div className="rounded-[1.5rem] bg-white p-5 text-slate-950">
+        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 shadow-xl shadow-black/20">
+          <div className="rounded-2xl bg-white p-5 text-slate-950 shadow-xl shadow-black/10">
             <div className="grid gap-4 md:grid-cols-4">
               {flow.map((item, index) => (
                 <div key={item.label} className="relative">
-                  <div className="flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
+                    <div className="flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg">
                     <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-600 text-white">
                       <item.icon className="h-6 w-6" />
                     </div>

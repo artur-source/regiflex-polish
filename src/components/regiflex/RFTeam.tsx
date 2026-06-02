@@ -15,9 +15,9 @@ const org = [
 
 export default function RFTeam() {
   return (
-    <section id="equipe" className="bg-slate-50 py-20 lg:py-28">
+    <section id="equipe" className="bg-slate-50 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-14 max-w-3xl text-center">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Equipe e Organograma</h2>
           <p className="mt-4 text-lg leading-relaxed text-slate-600">
             Uma estrutura enxuta, com responsabilidades claras para desenvolver, validar e comunicar o RegiFlex.
@@ -26,7 +26,7 @@ export default function RFTeam() {
 
         <div className="grid gap-5 md:grid-cols-3">
           {team.map((member) => (
-            <article key={member.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <article key={member.name} className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/5">
               <div className="grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-blue-600">
                 <member.icon className="h-8 w-8" />
               </div>
@@ -37,11 +37,11 @@ export default function RFTeam() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-6 lg:p-8">
-          <h3 className="mb-6 text-2xl font-extrabold text-slate-950">Organograma do projeto</h3>
+        <div className="mt-14 rounded-2xl border border-slate-200 bg-white p-7 shadow-xl shadow-blue-950/5 lg:p-9">
+          <h3 className="mb-8 text-2xl font-extrabold text-slate-950">Organograma do projeto</h3>
           <div className="grid gap-4 md:grid-cols-4">
             {org.map((item) => (
-              <div key={item.title} className="rounded-2xl bg-slate-50 p-5">
+              <div key={item.title} className="rounded-2xl bg-slate-50 p-6 transition duration-300 hover:-translate-y-1 hover:bg-blue-50">
                 <item.icon className="h-6 w-6 text-blue-600" />
                 <h4 className="mt-4 font-extrabold text-slate-950">{item.title}</h4>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>

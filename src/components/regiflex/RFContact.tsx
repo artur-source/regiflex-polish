@@ -9,29 +9,29 @@ const contacts = [
 
 export default function RFContact() {
   return (
-    <section id="contato" className="bg-white py-20 lg:py-28">
+    <section id="contato" className="bg-white py-24 lg:py-32">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-        <div>
+        <div className="min-w-0">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Contato</h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-600">
             Vamos conversar sobre a transformação digital da sua clínica.
           </p>
-          <div className="mt-8 grid gap-3">
+          <div className="mt-9 grid gap-4">
             {contacts.map((contact) => (
-              <a key={contact.label} href={contact.href} target={contact.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-200 hover:bg-white">
+              <a key={contact.label} href={contact.href} target={contact.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="flex w-full min-w-0 items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-xl hover:shadow-blue-950/5">
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-blue-600 text-white">
                   <contact.icon className="h-5 w-5" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm font-bold text-slate-500">{contact.label}</p>
-                  <p className="font-extrabold text-slate-950">{contact.value}</p>
+                  <p className="break-words font-extrabold text-slate-950">{contact.value}</p>
                 </div>
               </a>
             ))}
           </div>
         </div>
 
-        <form className="rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-sm lg:p-8">
+        <form className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-xl shadow-blue-950/5 lg:p-9">
           <div className="grid gap-4 md:grid-cols-2">
             <label className="space-y-2">
               <span className="text-sm font-bold text-slate-700">Nome</span>
@@ -50,7 +50,7 @@ export default function RFContact() {
               <textarea className="min-h-32 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100" placeholder="Conte como sua recepção funciona hoje." />
             </label>
           </div>
-          <a href="mailto:regiflex.contato@gmail.com?subject=Solicitação%20de%20Demonstração%20-%20RegiFlex" className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-emerald-600 px-6 py-4 text-base font-extrabold text-white transition hover:bg-emerald-700">
+          <a href="mailto:regiflex.contato@gmail.com?subject=Solicitação%20de%20Demonstração%20-%20RegiFlex" className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-emerald-600 px-6 py-4 text-base font-extrabold text-white shadow-lg shadow-emerald-950/10 transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300/50">
             Solicitar Demonstração
           </a>
         </form>

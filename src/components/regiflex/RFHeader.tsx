@@ -43,11 +43,11 @@ export default function RFHeader() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-xl shadow-sm border-b border-slate-200'
-          : 'bg-transparent'
+          ? 'bg-white/90 backdrop-blur-xl shadow-sm border-b border-slate-200/70'
+          : 'bg-[#07111f]/90 border-b border-white/5'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <button onClick={() => scrollTo('#hero')} className="flex items-center gap-2 group">
           <img src="/logo-regiflex.png" alt="RegiFlex" className="h-10 w-auto group-hover:scale-105 transition-transform duration-300" />
           <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${
@@ -57,12 +57,12 @@ export default function RFHeader() {
           </span>
         </button>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1.5">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative group ${
+              className={`relative rounded-full px-3.5 py-2 text-sm font-semibold transition-all duration-300 ${
                 scrolled
                   ? 'text-slate-600 hover:text-blue-700 hover:bg-blue-50'
                   : 'text-white/90 hover:text-white hover:bg-white/10'
@@ -84,7 +84,7 @@ export default function RFHeader() {
             </a>
             <a
               href="mailto:regiflex.contato@gmail.com?subject=Solicitação%20de%20Demonstração%20-%20RegiFlex"
-              className="px-6 py-2.5 bg-[#00A651] text-white rounded-full text-sm font-bold hover:bg-[#008e45] transition-all shadow-md hover:shadow-lg active:scale-95"
+              className="rounded-full bg-[#00A651] px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-emerald-950/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#008e45] hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-emerald-300/40 active:scale-95"
             >
               Demonstração
             </a>

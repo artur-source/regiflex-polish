@@ -11,7 +11,7 @@ const steps = [
 
 export default function RFExplanatory() {
   return (
-    <section id="como-funciona" className="bg-slate-50 py-20 lg:py-28">
+    <section id="como-funciona" className="bg-slate-50 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 max-w-3xl">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Como funciona</h2>
@@ -22,7 +22,7 @@ export default function RFExplanatory() {
 
         <div className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, index) => (
-            <div key={step.title} className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <div key={step.title} className="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/5">
               <div className="mb-6 flex items-center justify-between">
                 <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
                   <step.icon className="h-6 w-6" />
