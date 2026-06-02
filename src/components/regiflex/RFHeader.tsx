@@ -49,7 +49,7 @@ export default function RFHeader() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <button onClick={() => scrollTo('#hero')} className="flex items-center gap-2 group">
-          <img src="/logo-regiflex.png" alt="RegiFlex" className="h-10 w-auto group-hover:scale-105 transition-transform duration-300" />
+          <img src="/logo-regiflex.png" alt="RegiFlex" className="h-9 w-auto group-hover:scale-105 transition-transform duration-300" />
           <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${
             scrolled ? 'text-slate-900' : 'text-white'
           }`}>
@@ -57,12 +57,12 @@ export default function RFHeader() {
           </span>
         </button>
 
-        <nav className="hidden lg:flex items-center gap-1.5">
+        <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
-              className={`relative rounded-full px-3.5 py-2 text-sm font-semibold transition-all duration-300 ${
+              className={`relative whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-semibold transition-all duration-300 xl:px-3.5 ${
                 scrolled
                   ? 'text-slate-600 hover:text-blue-700 hover:bg-blue-50'
                   : 'text-white/90 hover:text-white hover:bg-white/10'
@@ -71,10 +71,10 @@ export default function RFHeader() {
               {link.label}
             </button>
           ))}
-          <div className="ml-4 flex items-center gap-3">
+          <div className="ml-2 flex items-center gap-2 xl:ml-4 xl:gap-3">
             <a
               href="https://appregiflex.com.br/login"
-              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+              className={`whitespace-nowrap px-4 py-2.5 rounded-full text-sm font-bold transition-all duration-300 xl:px-5 ${
                 scrolled
                   ? 'text-slate-700 hover:bg-slate-100'
                   : 'text-white hover:bg-white/10'
@@ -84,7 +84,7 @@ export default function RFHeader() {
             </a>
             <a
               href="mailto:regiflex.contato@gmail.com?subject=Solicitação%20de%20Demonstração%20-%20RegiFlex"
-              className="rounded-full bg-[#00A651] px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-emerald-950/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#008e45] hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-emerald-300/40 active:scale-95"
+              className="whitespace-nowrap rounded-full bg-[#00A651] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-emerald-950/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#008e45] hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-emerald-300/40 active:scale-95 xl:px-6"
             >
               Demonstração
             </a>

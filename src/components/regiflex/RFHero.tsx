@@ -75,7 +75,7 @@ export default function RFHero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative min-w-0"
+            className="relative min-w-0 lg:translate-y-8"
           >
             <div className="grid min-w-0 gap-6">
             <div className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
