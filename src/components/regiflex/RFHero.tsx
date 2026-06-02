@@ -80,25 +80,25 @@ export default function RFHero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative min-w-0 lg:translate-y-8"
           >
-            <div className="mx-auto w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-8 lg:mr-10">
-              <div className="mb-7 text-center">
-                <h3 className="text-2xl font-extrabold text-slate-950">Clínica Alfa</h3>
+            <div className="mx-auto w-full max-w-md rounded-2xl border border-slate-200 bg-white p-5 shadow-xl sm:p-6 lg:mr-10">
+              <div className="mb-5 text-center">
+                <h3 className="text-[26px] font-extrabold leading-tight text-slate-950">Clínica Alfa</h3>
                 <p className="mt-1 text-sm font-semibold text-slate-500">Odontologia</p>
-                <span className="mt-4 inline-block rounded-full bg-emerald-50 px-4 py-1.5 text-xs font-bold text-emerald-700">
+                <span className="mt-3 inline-block rounded-full bg-emerald-50 px-4 py-1.5 text-xs font-bold text-emerald-700">
                   Atendimento em andamento
                 </span>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {checkInFields.map((field) => (
-                  <div key={field.label} className="rounded-xl border border-slate-200 bg-white px-4 py-3">
+                  <div key={field.label} className="rounded-xl border border-slate-200 bg-white px-4 py-2.5">
                     <p className="text-xs font-bold uppercase tracking-wide text-slate-600">{field.label}</p>
-                    <p className="mt-2 text-sm font-medium text-slate-500">{field.value}</p>
+                    <p className="mt-1.5 text-sm font-medium text-slate-500">{field.value}</p>
                   </div>
                 ))}
               </div>
 
-              <button className="mt-6 w-full rounded-xl bg-blue-600 px-5 py-4 text-sm font-extrabold text-white transition duration-300 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+              <button className="mt-5 w-full rounded-xl bg-blue-600 px-5 py-3.5 text-sm font-extrabold text-white transition duration-300 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                 Entrar na Fila
               </button>
             </div>
