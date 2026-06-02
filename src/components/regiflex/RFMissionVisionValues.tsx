@@ -1,63 +1,33 @@
-import { motion } from 'framer-motion';
-import { Target, Eye, Handshake } from 'lucide-react';
+import { Eye, Handshake, Target } from 'lucide-react';
 
 const mvvItems = [
-  {
-    icon: Target,
-    title: 'Missão',
-    description: 'Melhorar o fluxo de atendimento em clínicas através de tecnologia simples e acessível, otimizando a experiência de pacientes e profissionais da saúde.',
-  },
-  {
-    icon: Eye,
-    title: 'Visão',
-    description: 'Ser a principal referência em soluções digitais inovadoras para a gestão de atendimento em saúde, reconhecida pela eficiência e impacto positivo.',
-  },
-  {
-    icon: Handshake,
-    title: 'Valores',
-    description: 'Eficiência, Simplicidade, Confiabilidade e Inovação. Guiamos nossas ações por esses pilares para construir um futuro mais ágil e humano na saúde.',
-  },
+  { icon: Target, title: 'Missão', description: 'Simplificar o atendimento em clínicas com tecnologia acessível, segura e fácil de operar.' },
+  { icon: Eye, title: 'Visão', description: 'Ser referência em soluções digitais para recepções clínicas mais ágeis e humanas.' },
+  { icon: Handshake, title: 'Valores', description: 'Eficiência, simplicidade, confiabilidade, inovação e respeito aos dados dos pacientes.' },
 ];
 
 export default function RFMissionVisionValues() {
   return (
-    <section id="missao-visao-valores" className="section-padding bg-rf-gray-light py-20 lg:py-32">
-      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
-        >
-          Nossa Missão, Visão e Valores
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
-        >
-          Pautamos nosso trabalho em princípios que visam a excelência e a transformação no setor da saúde.
-        </motion.p>
+    <section id="missao-visao-valores" className="bg-white py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            Missão, Visão e Valores
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+            Princípios que guiam o desenvolvimento do RegiFlex como produto e como projeto de startup.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {mvvItems.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="glass-card p-8 flex flex-col items-center text-center hover-lift"
-            >
-              <div className="bg-rf-blue-light p-4 rounded-full inline-flex items-center justify-center mb-6 shadow-lg">
-                <item.icon size={36} className="text-rf-blue" />
+        <div className="grid gap-5 md:grid-cols-3">
+          {mvvItems.map((item) => (
+            <article key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-7">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-600 text-white">
+                <item.icon className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
-              <p className="text-muted-foreground">{item.description}</p>
-            </motion.div>
+              <h3 className="mt-5 text-xl font-extrabold text-slate-950">{item.title}</h3>
+              <p className="mt-3 leading-relaxed text-slate-600">{item.description}</p>
+            </article>
           ))}
         </div>
       </div>

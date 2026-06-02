@@ -1,58 +1,35 @@
-import { motion } from 'framer-motion';
-import { QrCode, ListChecks, Layout, MousePointer2, Globe } from 'lucide-react';
+import { BarChart3, ClipboardList, LayoutDashboard, MonitorPlay, QrCode, UsersRound } from 'lucide-react';
 
 const features = [
-  {
-    icon: <QrCode className="w-6 h-6 text-blue-600" />,
-    title: "Cadastro digital",
-    desc: "Check-in via QR Code sem papelada."
-  },
-  {
-    icon: <ListChecks className="w-6 h-6 text-blue-600" />,
-    title: "Gestão de fila",
-    desc: "Organização automática por ordem de chegada."
-  },
-  {
-    icon: <Layout className="w-6 h-6 text-blue-600" />,
-    title: "Painel ADM",
-    desc: "Controle total da recepção em tempo real."
-  },
-  {
-    icon: <MousePointer2 className="w-6 h-6 text-blue-600" />,
-    title: "Interface intuitiva",
-    desc: "Fácil de usar para equipe e pacientes."
-  },
-  {
-    icon: <Globe className="w-6 h-6 text-blue-600" />,
-    title: "Acesso Web",
-    desc: "Funciona em qualquer navegador."
-  }
+  { icon: QrCode, title: 'Check-in Digital', desc: 'Paciente acessa o cadastro por QR Code.', benefit: 'Menos fila no balcão.' },
+  { icon: ClipboardList, title: 'Gestão de Filas', desc: 'Organização automática por status de atendimento.', benefit: 'Mais previsibilidade para a equipe.' },
+  { icon: LayoutDashboard, title: 'Dashboard Operacional', desc: 'Painel para acompanhar recepção em tempo real.', benefit: 'Decisão rápida durante o pico.' },
+  { icon: MonitorPlay, title: 'TV Display', desc: 'Tela de chamada e acompanhamento para pacientes.', benefit: 'Menos dúvidas na sala de espera.' },
+  { icon: BarChart3, title: 'Relatórios', desc: 'Indicadores para entender volume e gargalos.', benefit: 'Gestão baseada em dados.' },
+  { icon: UsersRound, title: 'Controle de Pacientes', desc: 'Histórico organizado do fluxo de entrada.', benefit: 'Menos informação perdida.' },
 ];
 
 export default function RFFeatures() {
   return (
-    <section id="funcionalidades" className="py-24 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Funcionalidades</h2>
+    <section id="funcionalidades" className="bg-white py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Funcionalidades</h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+            Recursos práticos para simplificar a operação da recepção e melhorar a experiência do paciente.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group"
-            >
-              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                {feature.icon}
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature) => (
+            <article key={feature.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <feature.icon className="h-7 w-7 text-blue-600" />
+              <h3 className="mt-5 text-xl font-extrabold text-slate-950">{feature.title}</h3>
+              <p className="mt-2 leading-relaxed text-slate-600">{feature.desc}</p>
+              <div className="mt-5 rounded-xl bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-800">
+                {feature.benefit}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
-              <p className="text-slate-500 text-sm">{feature.desc}</p>
-            </motion.div>
+            </article>
           ))}
         </div>
       </div>

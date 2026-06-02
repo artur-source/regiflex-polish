@@ -1,11 +1,12 @@
 import { Mail, Instagram } from 'lucide-react';
 
 const navLinks = [
+  { label: 'Problema', href: '#problema' },
   { label: 'Solução', href: '#solucao' },
   { label: 'Como funciona', href: '#como-funciona' },
-  { label: 'Flux', href: '#flux' },
   { label: 'Funcionalidades', href: '#funcionalidades' },
   { label: 'Diferenciais', href: '#diferenciais' },
+  { label: 'Público-alvo', href: '#publico-alvo' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Equipe', href: '#equipe' },
   { label: 'Contato', href: '#contato' },
@@ -24,7 +25,7 @@ export default function RFFooter() {
               <span className="font-extrabold text-xl">RegiFlex</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
-              Transformando o fluxo de atendimento clínico com tecnologia simples e acessível.
+              Check-in digital, fila em tempo real e gestão operacional para clínicas e consultórios.
             </p>
           </div>
 

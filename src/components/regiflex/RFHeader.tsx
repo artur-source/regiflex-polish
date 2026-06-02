@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
+  { label: 'Problema', href: '#problema' },
   { label: 'Solução', href: '#solucao' },
   { label: 'Como funciona', href: '#como-funciona' },
-  { label: 'Flux', href: '#flux' },
   { label: 'Funcionalidades', href: '#funcionalidades' },
   { label: 'Diferenciais', href: '#diferenciais' },
+  { label: 'Público-alvo', href: '#publico-alvo' },
   { label: 'Sobre', href: '#sobre' },
-  { label: 'Equipe', href: '#equipe' },
   { label: 'Contato', href: '#contato' },
 ];
 
@@ -83,10 +83,10 @@ export default function RFHeader() {
               Login
             </a>
             <a
-              href="https://appregiflex.com.br/pricing"
+              href="mailto:regiflex.contato@gmail.com?subject=Solicitação%20de%20Demonstração%20-%20RegiFlex"
               className="px-6 py-2.5 bg-[#00A651] text-white rounded-full text-sm font-bold hover:bg-[#008e45] transition-all shadow-md hover:shadow-lg active:scale-95"
             >
-              Começar
+              Demonstração
             </a>
           </div>
         </nav>
@@ -120,10 +120,10 @@ export default function RFHeader() {
                 Login
               </a>
               <a
-                href="https://appregiflex.com.br/pricing"
+                href="mailto:regiflex.contato@gmail.com?subject=Solicitação%20de%20Demonstração%20-%20RegiFlex"
                 className="px-4 py-3 bg-[#00A651] text-white font-bold text-center rounded-xl shadow-sm"
               >
-                Começar
+                Demonstração
               </a>
             </div>
           </nav>

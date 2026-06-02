@@ -1,90 +1,51 @@
-import { motion } from 'framer-motion';
-import { User, Code, Megaphone, ShieldCheck, Layout, TrendingUp } from 'lucide-react';
+import { Code2, Layers3, Megaphone, Search, ShieldCheck, Sparkles, UserRound } from 'lucide-react';
 
 const team = [
-  {
-    name: "Artur Alves",
-    role: "Líder técnico",
-    icon: <User className="w-10 h-10 text-blue-600" />
-  },
-  {
-    name: "Guilherme Almeida",
-    role: "Front-End, UX e UI",
-    icon: <Layout className="w-10 h-10 text-blue-600" />
-  },
-  {
-    name: "Nicollas Andrey",
-    role: "Marketing",
-    icon: <Megaphone className="w-10 h-10 text-blue-600" />
-  }
+  { name: 'Artur Alves Santos', role: 'Gestão e liderança técnica', responsibility: 'Arquitetura do sistema, produto e decisões técnicas.', icon: ShieldCheck },
+  { name: 'Guilherme Almeida', role: 'Desenvolvimento e UX/UI', responsibility: 'Interface, experiência do usuário e implementação front-end.', icon: Layers3 },
+  { name: 'Nicollas Andrey', role: 'Pesquisa e mercado', responsibility: 'Estratégia, posicionamento e comunicação da startup.', icon: Megaphone },
 ];
 
-const structure = [
-  {
-    title: "Liderança Técnica",
-    name: "Artur Alves Santos",
-    desc: "Arquitetura e desenvolvimento do sistema",
-    icon: <ShieldCheck className="w-6 h-6 text-blue-500" />
-  },
-  {
-    title: "Desenvolvimento do Produto",
-    name: "Guilherme Almeida",
-    desc: "Experiência do usuário e interfaces",
-    icon: <Code className="w-6 h-6 text-blue-500" />
-  },
-  {
-    title: "Estratégia e Mercado",
-    name: "Nicollas Andrey",
-    desc: "Negócio e posicionamento",
-    icon: <TrendingUp className="w-6 h-6 text-blue-500" />
-  }
+const org = [
+  { title: 'Gestão', desc: 'Prioridades do produto, decisões técnicas e visão de evolução.', icon: UserRound },
+  { title: 'Desenvolvimento', desc: 'Construção da plataforma, manutenção e qualidade do software.', icon: Code2 },
+  { title: 'Pesquisa', desc: 'Levantamento de necessidades do mercado e validação com usuários.', icon: Search },
+  { title: 'UX/UI', desc: 'Experiência da recepção, jornada do paciente e consistência visual.', icon: Sparkles },
 ];
 
 export default function RFTeam() {
   return (
-    <section id="equipe" className="py-24 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Equipe Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12">Equipe</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100"
-              >
-                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                  {member.icon}
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
-                <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider">{member.role}</p>
-              </motion.div>
-            ))}
-          </div>
+    <section id="equipe" className="bg-slate-50 py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Equipe e Organograma</h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+            Uma estrutura enxuta, com responsabilidades claras para desenvolver, validar e comunicar o RegiFlex.
+          </p>
         </div>
 
-        {/* Organograma Section */}
-        <div className="mt-32">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-12">Estrutura do projeto</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {structure.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="relative p-6 bg-white rounded-2xl border-l-4 border-blue-600 shadow-sm"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  {item.icon}
-                  <h4 className="font-bold text-slate-900">{item.title}</h4>
-                </div>
-                <p className="text-slate-900 font-bold text-lg mb-1">{item.name}</p>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {team.map((member) => (
+            <article key={member.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-blue-600">
+                <member.icon className="h-8 w-8" />
+              </div>
+              <h3 className="mt-5 text-xl font-extrabold text-slate-950">{member.name}</h3>
+              <p className="mt-1 text-sm font-bold uppercase tracking-wider text-blue-600">{member.role}</p>
+              <p className="mt-4 leading-relaxed text-slate-600">{member.responsibility}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-6 lg:p-8">
+          <h3 className="mb-6 text-2xl font-extrabold text-slate-950">Organograma do projeto</h3>
+          <div className="grid gap-4 md:grid-cols-4">
+            {org.map((item) => (
+              <div key={item.title} className="rounded-2xl bg-slate-50 p-5">
+                <item.icon className="h-6 w-6 text-blue-600" />
+                <h4 className="mt-4 font-extrabold text-slate-950">{item.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
+              </div>
             ))}
           </div>
         </div>

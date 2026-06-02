@@ -1,80 +1,38 @@
-import { motion } from 'framer-motion';
-import { UserPlus, QrCode, Users } from 'lucide-react';
+import { CheckCircle2, ClipboardCheck, Monitor, QrCode, UserCheck, Volume2 } from 'lucide-react';
 
 const steps = [
-  {
-    icon: <UserPlus className="w-8 h-8 text-blue-600" />,
-    title: "Clínica cria conta",
-    description: "Cadastro rápido da clínica em poucos minutos."
-  },
-  {
-    icon: <QrCode className="w-8 h-8 text-blue-600" />,
-    title: "Sistema gera QR Code",
-    description: "Check-in digital imediato para seus pacientes."
-  },
-  {
-    icon: <Users className="w-8 h-8 text-blue-600" />,
-    title: "Paciente entra na fila",
-    description: "Fila organizada automaticamente e sem estresse."
-  }
+  { icon: QrCode, title: 'Paciente escaneia o QR Code', desc: 'O acesso ao check-in fica disponível na recepção, balcão ou comunicação da clínica.' },
+  { icon: ClipboardCheck, title: 'Preenche o cadastro', desc: 'Dados essenciais são coletados de forma digital, reduzindo papel e retrabalho.' },
+  { icon: UserCheck, title: 'Entra automaticamente na fila', desc: 'O sistema organiza a chegada e mantém a recepção atualizada.' },
+  { icon: Monitor, title: 'Recepção acompanha em tempo real', desc: 'O painel mostra status, ordem e movimentação dos pacientes.' },
+  { icon: Volume2, title: 'Paciente é chamado', desc: 'A equipe direciona cada pessoa com mais clareza e menos interrupções.' },
+  { icon: CheckCircle2, title: 'Atendimento finalizado', desc: 'O fluxo fica registrado para acompanhamento e melhoria operacional.' },
 ];
 
 export default function RFExplanatory() {
   return (
-    <section id="como-funciona" className="py-24 bg-slate-50 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Como funciona</h2>
-          <p className="text-lg text-slate-600 font-medium">Fluxo direto em 3 etapas</p>
+    <section id="como-funciona" className="bg-slate-50 py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 max-w-3xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Como funciona</h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+            Uma timeline simples para o paciente e operacionalmente clara para quem gerencia a recepção.
+          </p>
         </div>
 
-        <div className="relative">
-          {/* Mascote Flux Apontando */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="absolute -left-12 -top-20 hidden lg:block w-48"
-          >
-            <img 
-              src="/flux-mascot.jpg" 
-              alt="Flux Mascot" 
-              className="w-full h-auto rounded-full border-4 border-white shadow-xl"
-            />
-            <div className="absolute top-1/2 -right-8 transform -translate-y-1/2">
-              <motion.div
-                animate={{ x: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-                className="text-blue-600"
-              >
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow text-center group"
-              >
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {step.icon}
+        <div className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {steps.map((step, index) => (
+            <div key={step.title} className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+              <div className="mb-6 flex items-center justify-between">
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
+                  <step.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{step.description}</p>
-              </motion.div>
-            ))}
-          </div>
-          
-          {/* Linha conectora decorativa para desktop */}
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 -translate-y-1/2 hidden md:block -z-0" />
+                <span className="text-sm font-extrabold text-slate-300">0{index + 1}</span>
+              </div>
+              <h3 className="text-xl font-extrabold text-slate-950">{step.title}</h3>
+              <p className="mt-3 leading-relaxed text-slate-600">{step.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

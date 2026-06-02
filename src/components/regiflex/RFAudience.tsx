@@ -1,68 +1,32 @@
-import { motion } from 'framer-motion';
-import { Stethoscope, BriefcaseMedical, Hospital, Users } from 'lucide-react';
+import { Activity, Brain, Dumbbell, Hospital, SmilePlus, Stethoscope } from 'lucide-react';
 
 const audienceItems = [
-  {
-    icon: Stethoscope,
-    title: 'Clínicas médicas',
-    description: 'Solução ideal para clínicas de diversas especialidades que buscam otimizar o atendimento.',
-  },
-  {
-    icon: BriefcaseMedical,
-    title: 'Consultórios',
-    description: 'Perfeito para consultórios individuais ou pequenos grupos, simplificando a gestão diária.',
-  },
-  {
-    icon: Hospital,
-    title: 'Centros de saúde',
-    description: 'Atende às necessidades de centros de saúde maiores, com alto volume de pacientes.',
-  },
-  {
-    icon: Users,
-    title: 'Instituições de atendimento',
-    description: 'Adaptável para qualquer instituição que preste serviços de saúde e precise de organização.',
-  },
+  { icon: Stethoscope, title: 'Clínicas Médicas', benefit: 'Organize alto volume de pacientes sem sobrecarregar a recepção.' },
+  { icon: SmilePlus, title: 'Odontologia', benefit: 'Reduza atrasos entre avaliação, consulta e procedimentos.' },
+  { icon: Brain, title: 'Psicologia', benefit: 'Mantenha uma experiência de chegada discreta, simples e organizada.' },
+  { icon: Dumbbell, title: 'Fisioterapia', benefit: 'Controle sessões recorrentes e fluxo de pacientes por horário.' },
+  { icon: Activity, title: 'Estética', benefit: 'Ofereça uma recepção mais moderna para tratamentos e avaliações.' },
+  { icon: Hospital, title: 'Consultórios Especializados', benefit: 'Padronize o atendimento mesmo com equipes pequenas.' },
 ];
 
 export default function RFAudience() {
   return (
-    <section id="publico-alvo" className="section-padding bg-background py-20 lg:py-32">
-      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
-        >
-          Quem pode se beneficiar do RegiFlex?
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
-        >
-          Nossa solução é versátil e se adapta a diferentes tipos de estabelecimentos de saúde.
-        </motion.p>
+    <section id="publico-alvo" className="bg-white py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Público-alvo</h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+            RegiFlex atende diferentes modelos de clínicas e consultórios que precisam de organização no primeiro contato com o paciente.
+          </p>
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {audienceItems.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="glass-card p-8 flex flex-col items-center text-center hover-lift"
-            >
-              <div className="bg-rf-blue-light p-4 rounded-full inline-flex items-center justify-center mb-6 shadow-lg">
-                <item.icon size={36} className="text-rf-blue" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
-              <p className="text-muted-foreground">{item.description}</p>
-            </motion.div>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {audienceItems.map((item) => (
+            <article key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/70 p-6">
+              <item.icon className="h-7 w-7 text-blue-600" />
+              <h3 className="mt-5 text-xl font-extrabold text-slate-950">{item.title}</h3>
+              <p className="mt-2 leading-relaxed text-slate-600">{item.benefit}</p>
+            </article>
           ))}
         </div>
       </div>
