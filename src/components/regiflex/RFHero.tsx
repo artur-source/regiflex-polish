@@ -34,7 +34,7 @@ export default function RFHero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="grid items-center gap-14 lg:grid-cols-[0.98fr_1.02fr]">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -52,7 +52,7 @@ export default function RFHero() {
                 ['Fila ao vivo', UsersRound],
                 ['Menos espera', Clock3],
               ].map(([label, Icon]) => (
-                <div key={label as string} className="rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-3 text-center transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.07]">
+                <div key={label as string} className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 text-center transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.07]">
                   <Icon className="mx-auto mb-2 h-5 w-5 text-emerald-400" />
                   <span className="text-xs font-bold text-slate-200">{label as string}</span>
                 </div>
@@ -61,13 +61,13 @@ export default function RFHero() {
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => window.location.href = 'mailto:regiflex.contato@gmail.com?subject=Solicitação%20de%20Demonstração%20-%20RegiFlex'}
-                className="rounded-full bg-[#00A651] px-8 py-4 text-lg font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#008e45] focus:outline-none focus:ring-4 focus:ring-emerald-400/30 active:scale-95"
+                className="rounded-xl bg-[#00A651] px-8 py-4 text-lg font-bold text-white shadow-[0_12px_28px_rgba(0,166,81,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#008e45] focus:outline-none focus:ring-4 focus:ring-emerald-400/30 active:scale-95"
               >
                 Solicitar Demonstração
               </button>
               <button
                 onClick={() => scrollTo('#como-funciona')}
-                className="rounded-full bg-white/10 px-8 py-4 text-lg font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/[0.16] focus:outline-none focus:ring-4 focus:ring-white/20"
+                className="rounded-xl bg-white/10 px-8 py-4 text-lg font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/[0.16] focus:outline-none focus:ring-4 focus:ring-white/20"
               >
                 Ver como funciona
               </button>
@@ -80,18 +80,18 @@ export default function RFHero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative min-w-0 lg:translate-y-8"
           >
-            <div className="mx-auto w-full max-w-[410px] rounded-2xl border border-slate-200 bg-white p-4 shadow-xl sm:p-5 lg:mr-10">
+            <div className="mx-auto w-full max-w-[408px] rounded-xl border border-slate-200 bg-white p-4 shadow-[0_28px_70px_rgba(0,0,0,0.28)] sm:p-5 lg:mr-10">
               <div className="mb-4 text-center">
                 <h3 className="text-2xl font-extrabold leading-tight text-slate-950">Clínica Alfa</h3>
                 <p className="mt-1 text-sm font-semibold text-slate-500">Odontologia</p>
-                <span className="mt-2.5 inline-block rounded-full bg-emerald-50 px-4 py-1 text-xs font-bold text-emerald-700">
+                <span className="mt-2.5 inline-block rounded-lg bg-emerald-50 px-4 py-1 text-xs font-bold text-emerald-700">
                   Atendimento em andamento
                 </span>
               </div>
 
               <div className="space-y-2.5">
                 {checkInFields.map((field) => (
-                  <div key={field.label} className="rounded-xl border border-slate-200 bg-white px-4 py-2">
+                  <div key={field.label} className="rounded-lg border border-slate-200 bg-white px-4 py-2">
                     <p className="text-xs font-bold uppercase tracking-wide text-slate-600">{field.label}</p>
                     <p className="mt-1 text-sm font-medium text-slate-500">{field.value}</p>
                   </div>

@@ -11,28 +11,28 @@ const features = [
 
 export default function RFFeatures() {
   return (
-    <section id="funcionalidades" className="bg-white py-24 lg:py-32">
+    <section id="funcionalidades" className="bg-white py-24 lg:py-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Funcionalidades</h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+        <div className="mx-auto mb-14 max-w-[720px] text-center">
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-[46px]">Funcionalidades</h2>
+          <p className="mt-4 text-lg leading-8 text-slate-600">
             Recursos práticos para simplificar a operação da recepção e melhorar a experiência do paciente.
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {features.map((feature) => (
-            <article key={feature.title} className={`rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/5 ${feature.featured ? 'lg:col-span-2' : ''}`}>
+            <article key={feature.title} className={`rounded-xl border border-slate-200 bg-white p-6 shadow-[0_1px_0_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_14px_30px_rgba(15,23,42,0.06)] ${feature.featured ? 'lg:col-span-2 lg:p-8' : ''}`}>
               <feature.icon className="h-7 w-7 text-blue-600" />
-              <h3 className="mt-5 text-xl font-extrabold text-slate-950">{feature.title}</h3>
-              <p className="mt-2 leading-relaxed text-slate-600">{feature.desc}</p>
-              <div className="mt-5 rounded-xl bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-800">
+              <h3 className="mt-5 text-xl font-extrabold leading-snug text-slate-950">{feature.title}</h3>
+              <p className="mt-2 leading-7 text-slate-600">{feature.desc}</p>
+              <div className="mt-5 rounded-lg bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-800">
                 {feature.benefit}
               </div>
               {feature.featured && (
                 <div className="mt-6 grid gap-3 sm:grid-cols-3">
                   {['Pacientes Hoje', 'Aguardando', 'Finalizados'].map((label, index) => (
-                    <div key={label} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                    <div key={label} className="rounded-lg border border-slate-200 bg-slate-50 p-4">
                       <p className="text-2xl font-extrabold text-slate-950">{index === 0 ? '18' : index === 1 ? '02' : '16'}</p>
                       <p className="text-xs font-bold text-slate-500">{label}</p>
                     </div>

@@ -11,26 +11,26 @@ const steps = [
 
 export default function RFExplanatory() {
   return (
-    <section id="como-funciona" className="bg-slate-50 py-24 lg:py-32">
+    <section id="como-funciona" className="bg-slate-50 py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-3xl">
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Como funciona</h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+        <div className="mb-14 max-w-2xl">
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-[44px]">Como funciona</h2>
+          <p className="mt-4 text-lg leading-8 text-slate-600">
             Uma timeline simples para o paciente e operacionalmente clara para quem gerencia a recepção.
           </p>
         </div>
 
-        <div className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="relative grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-6">
           {steps.map((step, index) => (
-            <div key={step.title} className="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/5">
+            <div key={step.title} className={`group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_1px_0_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_14px_30px_rgba(15,23,42,0.06)] ${index === 0 || index === 3 ? 'lg:p-8' : ''}`}>
               <div className="mb-6 flex items-center justify-between">
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
                   <step.icon className="h-6 w-6" />
                 </div>
                 <span className="text-sm font-extrabold text-slate-300">0{index + 1}</span>
               </div>
-              <h3 className="text-xl font-extrabold text-slate-950">{step.title}</h3>
-              <p className="mt-3 leading-relaxed text-slate-600">{step.desc}</p>
+              <h3 className="text-xl font-extrabold leading-snug text-slate-950">{step.title}</h3>
+              <p className="mt-3 leading-7 text-slate-600">{step.desc}</p>
             </div>
           ))}
         </div>

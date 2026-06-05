@@ -14,37 +14,37 @@ const timeline = [
 
 export default function RFAbout() {
   return (
-    <section id="sobre" className="bg-slate-950 py-24 text-white lg:py-32">
+    <section id="sobre" className="bg-slate-950 py-28 text-white lg:py-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div>
-            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-300">
+            <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/12 text-emerald-300">
               <Lightbulb className="h-6 w-6" />
             </div>
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Sobre o RegiFlex</h2>
-            <p className="mt-5 text-lg leading-relaxed text-slate-300">
+            <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[44px]">Sobre o RegiFlex</h2>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">
               O RegiFlex é uma startup em desenvolvimento criada para resolver um problema recorrente em clínicas: a falta de organização no início da jornada do paciente.
             </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            {blocks.map((block) => (
-              <article key={block.title} className="rounded-2xl border border-white/10 bg-white/[0.05] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08]">
+          <div className="grid gap-4 md:grid-cols-3 lg:pt-3">
+            {blocks.map((block, index) => (
+              <article key={block.title} className={`rounded-xl border border-white/10 bg-white/[0.045] p-6 shadow-[0_1px_0_rgba(255,255,255,0.04)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.07] ${index === 1 ? 'md:-translate-y-3 md:bg-white/[0.065]' : ''}`}>
                 <block.icon className="h-6 w-6 text-emerald-300" />
-                <h3 className="mt-4 font-extrabold">{block.title}</h3>
+                <h3 className="mt-4 font-extrabold leading-tight">{block.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-300">{block.content}</p>
               </article>
             ))}
           </div>
         </div>
 
-        <div className="mt-16 rounded-2xl border border-white/10 bg-white/[0.05] p-7 shadow-xl shadow-black/20 lg:p-9">
-          <h3 className="mb-8 text-2xl font-extrabold">Linha do tempo</h3>
-          <div className="grid gap-5 md:grid-cols-3">
+        <div className="mt-16 rounded-xl border border-white/10 bg-white/[0.045] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.20)] lg:p-8">
+          <h3 className="mb-7 text-2xl font-extrabold leading-tight">Linha do tempo</h3>
+          <div className="grid gap-4 md:grid-cols-[0.95fr_1.1fr_0.95fr]">
             {timeline.map((item) => (
-              <div key={item.year} className="rounded-2xl bg-white p-6 text-slate-950 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1">
+              <div key={item.year} className="rounded-xl bg-white p-6 text-slate-950 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition duration-300 hover:-translate-y-0.5">
                 <p className="text-3xl font-extrabold text-blue-600">{item.year}</p>
-                <h4 className="mt-2 text-lg font-extrabold">{item.label}</h4>
+                <h4 className="mt-2 text-lg font-extrabold leading-tight">{item.label}</h4>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
               </div>
             ))}

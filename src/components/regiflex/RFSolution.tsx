@@ -9,27 +9,27 @@ const flow = [
 
 export default function RFSolution() {
   return (
-    <section id="solucao" className="bg-slate-950 py-24 text-white lg:py-32">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+    <section id="solucao" className="bg-slate-950 py-28 text-white lg:py-36">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
         <div>
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[46px]">
             Conheça o RegiFlex
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-slate-300">
+          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
             O RegiFlex é uma plataforma web para clínicas, consultórios e recepções que precisam digitalizar o cadastro de pacientes, controlar filas e acompanhar o atendimento em tempo real.
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-slate-300">
+          <p className="mt-4 max-w-xl text-lg leading-8 text-slate-300">
             Ele substitui processos manuais por um fluxo simples: o paciente faz check-in via QR Code, a recepção acompanha o painel e a equipe chama cada atendimento com mais organização.
           </p>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 shadow-xl shadow-black/20">
-          <div className="rounded-2xl bg-white p-5 text-slate-950 shadow-xl shadow-black/10">
+        <div className="rounded-xl border border-white/10 bg-white/[0.035] p-4 shadow-[0_24px_60px_rgba(0,0,0,0.24)]">
+          <div className="rounded-xl bg-white p-5 text-slate-950 shadow-[0_16px_40px_rgba(0,0,0,0.12)]">
             <div className="grid gap-4 md:grid-cols-4">
               {flow.map((item, index) => (
                 <div key={item.label} className="relative">
-                    <div className="flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg">
-                    <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-600 text-white">
+                    <div className="flex h-full flex-col items-center rounded-xl border border-slate-200 bg-slate-50 p-5 text-center transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_10px_24px_rgba(15,23,42,0.07)]">
+                    <div className="grid h-11 w-11 place-items-center rounded-xl bg-blue-600 text-white">
                       <item.icon className="h-6 w-6" />
                     </div>
                     <span className="mt-4 text-sm font-extrabold">{item.label}</span>
@@ -40,7 +40,7 @@ export default function RFSolution() {
                 </div>
               ))}
             </div>
-            <div className="mt-5 rounded-2xl bg-emerald-50 p-5">
+            <div className="mt-5 rounded-xl bg-emerald-50 p-5">
               <p className="font-bold text-emerald-800">
                 Resultado: menos improviso na recepção, mais clareza para o paciente e mais controle para a gestão.
               </p>

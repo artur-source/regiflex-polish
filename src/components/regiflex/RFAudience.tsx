@@ -11,21 +11,21 @@ const audienceItems = [
 
 export default function RFAudience() {
   return (
-    <section id="publico-alvo" className="bg-white py-24 lg:py-32">
+    <section id="publico-alvo" className="bg-white py-24 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="mx-auto mb-14 max-w-[720px] text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Público-alvo</h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+          <p className="mt-4 text-lg leading-8 text-slate-600">
             RegiFlex atende diferentes modelos de clínicas e consultórios que precisam de organização no primeiro contato com o paciente.
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {audienceItems.map((item) => (
-            <article key={item.title} className={`rounded-2xl border border-slate-200 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-blue-950/5 ${item.featured ? 'bg-slate-950 text-white md:col-span-2 lg:col-span-1' : 'bg-slate-50/70'}`}>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+          {audienceItems.map((item, index) => (
+            <article key={item.title} className={`rounded-xl border border-slate-200 p-6 shadow-[0_1px_0_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_14px_30px_rgba(15,23,42,0.06)] ${item.featured ? 'bg-slate-950 text-white md:col-span-2 lg:col-span-1 lg:p-8' : index === 4 ? 'bg-white lg:translate-y-5' : 'bg-slate-50/70'}`}>
               <item.icon className="h-7 w-7 text-blue-600" />
-              <h3 className={`mt-5 text-xl font-extrabold ${item.featured ? 'text-white' : 'text-slate-950'}`}>{item.title}</h3>
-              <p className={`mt-2 leading-relaxed ${item.featured ? 'text-slate-300' : 'text-slate-600'}`}>{item.benefit}</p>
+              <h3 className={`mt-5 text-xl font-extrabold leading-tight ${item.featured ? 'text-white' : 'text-slate-950'}`}>{item.title}</h3>
+              <p className={`mt-2 leading-7 ${item.featured ? 'text-slate-300' : 'text-slate-600'}`}>{item.benefit}</p>
             </article>
           ))}
         </div>

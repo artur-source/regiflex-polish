@@ -9,17 +9,17 @@ const contacts = [
 
 export default function RFContact() {
   return (
-    <section id="contato" className="bg-white py-24 lg:py-32">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+    <section id="contato" className="bg-white py-24 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
         <div className="min-w-0">
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Contato</h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-600">
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-[44px]">Contato</h2>
+          <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">
             Vamos conversar sobre a transformação digital da sua clínica.
           </p>
           <div className="mt-9 grid gap-4">
             {contacts.map((contact) => (
-              <a key={contact.label} href={contact.href} target={contact.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="flex w-full min-w-0 items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-xl hover:shadow-blue-950/5">
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-blue-600 text-white">
+              <a key={contact.label} href={contact.href} target={contact.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="flex w-full min-w-0 items-center gap-4 rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-[0_1px_0_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-white hover:shadow-[0_14px_30px_rgba(15,23,42,0.06)]">
+                <div className="grid h-11 w-11 place-items-center rounded-lg bg-blue-600 text-white">
                   <contact.icon className="h-5 w-5" />
                 </div>
                 <div className="min-w-0">
@@ -31,7 +31,7 @@ export default function RFContact() {
           </div>
         </div>
 
-        <form className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-xl shadow-blue-950/5 lg:p-9">
+        <form className="min-w-0 rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_42px_rgba(15,23,42,0.06)] lg:p-8">
           <div className="grid gap-4 md:grid-cols-2">
             <label className="space-y-2">
               <span className="text-sm font-bold text-slate-700">Nome</span>

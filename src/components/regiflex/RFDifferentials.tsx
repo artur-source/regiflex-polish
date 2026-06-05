@@ -12,31 +12,31 @@ const differentials = [
 
 export default function RFDifferentials() {
   return (
-    <section id="diferenciais" className="bg-slate-50 py-24 lg:py-32">
+    <section id="diferenciais" className="bg-slate-50 py-24 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-3xl">
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Diferenciais</h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+        <div className="mb-14 max-w-2xl">
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-[44px]">Diferenciais</h2>
+          <p className="mt-4 text-lg leading-8 text-slate-600">
             O foco do RegiFlex é transformar o atendimento em um processo mais visível, seguro e fácil de operar.
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-5">
           {differentials.map((diff, index) => (
-            <article key={diff.title} className={`rounded-2xl border p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/5 ${index === 6 ? 'border-emerald-200 bg-emerald-50 lg:col-span-2' : 'border-slate-200 bg-white'}`}>
+            <article key={diff.title} className={`rounded-xl border p-6 shadow-[0_1px_0_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(15,23,42,0.06)] ${index === 6 ? 'border-emerald-200 bg-emerald-50 lg:col-span-2 lg:p-8' : 'border-slate-200 bg-white'}`}>
               <diff.icon className={`h-7 w-7 ${index === 6 ? 'text-emerald-700' : 'text-blue-600'}`} />
-              <h3 className="mt-5 text-lg font-extrabold text-slate-950">{diff.title}</h3>
-              <p className="mt-2 leading-relaxed text-slate-600">{diff.desc}</p>
+              <h3 className="mt-5 text-lg font-extrabold leading-snug text-slate-950">{diff.title}</h3>
+              <p className="mt-2 leading-7 text-slate-600">{diff.desc}</p>
             </article>
           ))}
         </div>
 
-        <div id="flux" className="mt-14 grid gap-10 rounded-2xl border border-blue-100 bg-white p-7 shadow-xl shadow-blue-950/5 lg:grid-cols-[0.65fr_1fr] lg:p-9">
+        <div id="flux" className="mt-16 grid gap-10 rounded-xl border border-blue-100 bg-white p-6 shadow-[0_18px_44px_rgba(15,23,42,0.06)] lg:grid-cols-[0.58fr_1fr] lg:p-8">
           <div>
-            <img src="/flux-mascot.jpg" alt="Flux, mascote do RegiFlex" className="mx-auto w-full max-w-xs rounded-2xl border border-slate-200 shadow-lg" />
+            <img src="/flux-mascot.jpg" alt="Flux, mascote do RegiFlex" className="mx-auto w-full max-w-[280px] rounded-xl border border-slate-200 shadow-[0_12px_30px_rgba(15,23,42,0.10)]" />
           </div>
           <div className="flex flex-col justify-center">
-            <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-bold text-blue-700">
+            <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-xl bg-blue-50 px-4 py-2 text-sm font-bold text-blue-700">
               <ShieldCheck className="h-4 w-4" />
               Flux
             </div>
@@ -46,7 +46,7 @@ export default function RFDifferentials() {
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               {['Aguardando', 'Chamado', 'Em atendimento'].map((state) => (
-                <div key={state} className="rounded-xl bg-slate-50 px-4 py-3 text-sm font-bold text-slate-700">{state}</div>
+                <div key={state} className="rounded-lg bg-slate-50 px-4 py-3 text-sm font-bold text-slate-700">{state}</div>
               ))}
             </div>
           </div>
